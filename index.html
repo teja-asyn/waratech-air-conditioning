@@ -1,38 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Waratech Air Conditioning-Refrigeration Service. Residential and commercial air conditioning, installation, sales and preventative maintenance across Sydney.">
+  <meta name="description" content="Waratech Sydney — healthier indoor air through expert air conditioning cleaning, servicing, installation and refrigeration across Greater Sydney.">
   <meta name="theme-color" content="#03162f">
   <meta name="robots" content="index, follow">
   <!-- Replace YOUR-DOMAIN.com with your live domain after deploy -->
   <link rel="canonical" href="https://YOUR-DOMAIN.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Waratech">
-  <meta property="og:title" content="Waratech | Air Conditioning & Refrigeration Service">
-  <meta property="og:description" content="Residential and commercial air conditioning, installation, sales and preventative maintenance across Sydney.">
+  <meta property="og:title" content="Waratech Sydney | Healthy Air Conditioning Service">
+  <meta property="og:description" content="Cleaner air, reliable comfort and trusted HVAC service for Sydney homes and businesses.">
   <meta property="og:url" content="https://YOUR-DOMAIN.com/">
   <meta property="og:image" content="https://YOUR-DOMAIN.com/waratech-hvac-hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Waratech | Air Conditioning & Refrigeration Service">
-  <meta name="twitter:description" content="Residential and commercial air conditioning, installation, sales and preventative maintenance across Sydney.">
+  <meta name="twitter:title" content="Waratech Sydney | Healthy Air Conditioning Service">
+  <meta name="twitter:description" content="Cleaner air, reliable comfort and trusted HVAC service for Sydney homes and businesses.">
   <meta name="twitter:image" content="https://YOUR-DOMAIN.com/waratech-hvac-hero.jpg">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="waratech-logo.jpg">
-  <title>Waratech | Air Conditioning & Refrigeration Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <title>Waratech Sydney | Healthy Air Conditioning & Refrigeration</title>
   <style>
     :root {
       --navy: #061f40;
       --navy-deep: #03162f;
+      --navy-soft: #0a2a52;
       --gold: #d99a13;
       --gold-light: #f2bd3d;
-      --cream: #f7f5f0;
-      --ink: #15243a;
-      --muted: #667085;
+      --sky: #e8f3fb;
+      --mist: #f3f7fb;
+      --ink: #14233a;
+      --muted: #5d6b7c;
       --white: #fff;
       --line: rgba(217,154,19,.35);
       --shadow: 0 18px 50px rgba(3,22,47,.14);
+      --radius: 18px;
+      --font-display: "Fraunces", Georgia, serif;
+      --font-body: "DM Sans", Arial, sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -40,30 +48,49 @@
     body {
       margin: 0;
       color: var(--ink);
-      background: var(--cream);
-      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(ellipse 80% 50% at 100% -10%, rgba(232,243,251,.9), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 0% 20%, rgba(242,189,61,.08), transparent 45%),
+        var(--mist);
+      font-family: var(--font-body);
       line-height: 1.6;
     }
     a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
     .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
 
     .topbar {
-      background: var(--navy-deep);
+      background: linear-gradient(90deg, var(--navy-deep), var(--navy-soft));
       color: #f7f7f7;
-      font-size: .9rem;
-      padding: 9px 0;
+      font-size: .88rem;
+      padding: 10px 0;
     }
-    .topbar-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .topbar-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .topbar-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #f8e8bf;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+    .topbar-badge::before {
+      content: "";
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #7dd3a7;
+      box-shadow: 0 0 0 4px rgba(125,211,167,.18);
+    }
     .topbar a:hover, footer a:hover { color: var(--gold-light); }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(5,28,57,.97);
+      z-index: 30;
+      background: rgba(3,22,47,.94);
       color: var(--white);
       border-bottom: 2px solid var(--gold);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(14px);
     }
     .nav {
       min-height: 82px;
@@ -72,304 +99,600 @@
       justify-content: space-between;
       gap: 24px;
     }
-    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
-    .brand-mark { width: 49px; height: 49px; flex: 0 0 auto; }
-    .brand-name { font-family: Georgia, 'Times New Roman', serif; font-size: 1.8rem; font-weight: 700; line-height: 1; }
-    .brand-sub { display: block; margin-top: 5px; color: #f3e7c8; font-family: Georgia, 'Times New Roman', serif; font-size: .78rem; }
-    .nav-links { display: flex; align-items: center; gap: 25px; font-size: .93rem; }
-    .nav-links a { color: #f5f6f8; }
+    .brand { display: flex; align-items: center; min-width: 0; }
+    .brand-logo-img { width: 230px; max-width: 34vw; height: 66px; object-fit: contain; object-position: left center; border-radius: 5px; }
+    .nav-links { display: flex; align-items: center; gap: 22px; font-size: .93rem; font-weight: 500; }
+    .nav-links a { color: #f5f6f8; transition: color .2s ease; }
     .nav-links a:hover { color: var(--gold-light); }
     .nav-cta, .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       border-radius: 999px;
-      padding: 12px 21px;
+      padding: 12px 22px;
       font-weight: 700;
-      background: var(--gold);
+      background: linear-gradient(180deg, var(--gold-light), var(--gold));
       color: var(--navy-deep);
       border: 2px solid var(--gold);
-      transition: .2s ease;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      box-shadow: 0 8px 20px rgba(217,154,19,.28);
     }
-    .nav-cta:hover, .button:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-2px); }
-    .menu-toggle { display: none; background: transparent; color: white; border: 1px solid var(--line); border-radius: 8px; padding: 8px 11px; font-size: 1.2rem; }
+    .nav-cta:hover, .button:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(217,154,19,.34);
+    }
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      color: white;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 8px 11px;
+      font-size: 1.2rem;
+      min-width: 42px;
+      min-height: 42px;
+    }
 
     .hero {
       position: relative;
       overflow: hidden;
       color: white;
-      background:
-        radial-gradient(circle at 82% 15%, rgba(217,154,19,.23), transparent 25%),
-        linear-gradient(120deg, var(--navy-deep), var(--navy) 65%, #0a315c);
-      padding: 94px 0 88px;
+      min-height: min(88vh, 760px);
+      display: flex;
+      align-items: center;
+      background-image:
+        linear-gradient(105deg, rgba(3,22,47,.96) 0%, rgba(3,22,47,.88) 42%, rgba(3,22,47,.42) 72%, rgba(3,22,47,.28) 100%),
+        url('waratech-hvac-hero.jpg');
+      background-size: cover;
+      background-position: center 48%;
+      padding: 88px 0 96px;
     }
     .hero::after {
       content: "";
       position: absolute;
-      width: 620px; height: 620px;
-      border: 1px solid rgba(242,189,61,.22);
-      border-radius: 50%;
-      right: -190px; bottom: -420px;
-      box-shadow: 0 0 0 28px rgba(242,189,61,.035), 0 0 0 58px rgba(242,189,61,.025);
+      inset: auto 0 0 0;
+      height: 96px;
+      background: linear-gradient(180deg, transparent, var(--mist));
+      pointer-events: none;
     }
-    .hero-content { position: relative; z-index: 1; max-width: 760px; }
-    .eyebrow { color: var(--gold-light); text-transform: uppercase; letter-spacing: .18em; font-size: .8rem; font-weight: 800; }
-    h1, h2, h3 { margin-top: 0; }
-    h1 { max-width: 760px; margin: 17px 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2.5rem, 6vw, 4.7rem); line-height: 1.06; }
-    .hero p { max-width: 650px; color: #e5eaf1; font-size: 1.15rem; }
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
-    .button-outline { background: transparent; color: white; border-color: rgba(255,255,255,.6); }
-    .button-outline:hover { color: var(--navy-deep); background: white; border-color: white; }
-    .hero-tags { display: flex; gap: 11px; flex-wrap: wrap; margin-top: 35px; }
-    .hero-tags span { border: 1px solid rgba(242,189,61,.45); border-radius: 30px; padding: 7px 13px; color: #f8e8bf; font-size: .88rem; }
-
-    .trust-strip { background: var(--gold); color: var(--navy-deep); }
-    .trust-inner { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; padding: 17px 0; text-align: center; font-weight: 800; font-size: .92rem; }
-    .section { padding: 82px 0; }
-    .section-heading { max-width: 720px; margin: 0 auto 42px; text-align: center; }
-    .section-heading .eyebrow { color: #a56d00; }
-    .section-heading h2 { color: var(--navy); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2rem,4vw,3rem); margin: 10px 0; }
-    .section-heading p { color: var(--muted); margin: 0; }
-    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-    .service-card {
+    .hero-content { position: relative; z-index: 1; max-width: 720px; animation: heroEnter .9s ease both; }
+    .eyebrow {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .78rem;
+      font-weight: 800;
+    }
+    h1, h2, h3 { margin-top: 0; font-family: var(--font-display); }
+    h1 {
+      max-width: 12ch;
+      margin: 16px 0 18px;
+      font-size: clamp(2.7rem, 6.4vw, 4.8rem);
+      line-height: 1.02;
+      letter-spacing: -.02em;
+    }
+    .hero p {
+      max-width: 36rem;
+      color: #e5eaf1;
+      font-size: 1.14rem;
+      margin: 0;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .button-outline {
+      background: transparent;
+      color: white;
+      border-color: rgba(255,255,255,.55);
+      box-shadow: none;
+    }
+    .button-outline:hover {
+      color: var(--navy-deep);
       background: white;
-      border: 1px solid #ece7dc;
-      border-top: 4px solid var(--gold);
-      border-radius: 14px;
-      padding: 27px;
-      box-shadow: 0 8px 25px rgba(3,22,47,.05);
+      border-color: white;
+      box-shadow: none;
     }
-    .service-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 13px; background: #fff4d9; color: #9b6500; font-size: 1.45rem; margin-bottom: 17px; }
-    .service-card h3 { color: var(--navy); margin-bottom: 8px; font-size: 1.2rem; }
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 34px;
+      color: #d7e2f0;
+      font-size: .92rem;
+      font-weight: 500;
+    }
+    .hero-proof span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero-proof span::before {
+      content: "";
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--gold-light);
+    }
+
+    .trust-strip {
+      position: relative;
+      z-index: 2;
+      margin-top: -34px;
+      padding-bottom: 8px;
+    }
+    .trust-panel {
+      background: linear-gradient(135deg, #fff, #f8fbfe);
+      border: 1px solid rgba(6,31,64,.08);
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(3,22,47,.1);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      overflow: hidden;
+    }
+    .trust-item {
+      padding: 22px 18px;
+      text-align: center;
+      border-right: 1px solid rgba(6,31,64,.07);
+    }
+    .trust-item:last-child { border-right: 0; }
+    .trust-item strong {
+      display: block;
+      color: var(--navy);
+      font-size: .98rem;
+      margin-bottom: 4px;
+    }
+    .trust-item span { color: var(--muted); font-size: .84rem; }
+
+    .section { padding: 84px 0; }
+    .section-heading { max-width: 720px; margin: 0 auto 42px; text-align: center; }
+    .section-heading .eyebrow { color: #9a6a00; }
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      margin: 10px 0 12px;
+      line-height: 1.12;
+    }
+    .section-heading p { color: var(--muted); margin: 0; font-size: 1.05rem; }
+
+    .air-section {
+      background:
+        linear-gradient(180deg, rgba(232,243,251,.75), rgba(243,247,251,.2));
+    }
+    .air-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+    .air-copy {
+      background: var(--navy);
+      color: white;
+      border-radius: 22px;
+      padding: 38px;
+      position: relative;
+      overflow: hidden;
+    }
+    .air-copy::before {
+      content: "";
+      position: absolute;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      right: -60px; top: -70px;
+      background: radial-gradient(circle, rgba(242,189,61,.22), transparent 70%);
+    }
+    .air-copy h2 {
+      position: relative;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      margin: 10px 0 14px;
+      max-width: 12ch;
+      line-height: 1.12;
+    }
+    .air-copy > p { position: relative; color: #d5deea; margin: 0 0 22px; }
+    .air-points { position: relative; display: grid; gap: 14px; }
+    .air-point {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: start;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(242,189,61,.2);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .air-point .mark {
+      width: 42px; height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: rgba(242,189,61,.14);
+      color: var(--gold-light);
+      font-weight: 800;
+    }
+    .air-point strong { display: block; margin-bottom: 2px; }
+    .air-point span { color: #c8d3e2; font-size: .92rem; }
+    .air-visual {
+      border-radius: 22px;
+      background:
+        linear-gradient(160deg, rgba(255,255,255,.92), rgba(232,243,251,.95)),
+        var(--white);
+      border: 1px solid rgba(6,31,64,.08);
+      padding: 34px 28px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .air-visual h3 {
+      color: var(--navy);
+      font-size: 1.7rem;
+      margin: 0 0 10px;
+    }
+    .air-visual p { color: var(--muted); margin: 0 0 22px; }
+    .quality-meter {
+      display: grid;
+      gap: 14px;
+    }
+    .quality-row {
+      display: grid;
+      grid-template-columns: 110px 1fr 52px;
+      gap: 12px;
+      align-items: center;
+      font-size: .92rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .meter-track {
+      height: 10px;
+      border-radius: 999px;
+      background: #e4ebf3;
+      overflow: hidden;
+    }
+    .meter-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #2f9e6c, #7dd3a7);
+      width: 0;
+      transition: width 1.1s ease;
+    }
+    .quality-row.visible .meter-fill { width: var(--level); }
+    .quality-row em { font-style: normal; color: #1f7a52; text-align: right; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .service-card {
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(6,31,64,.08);
+      border-top: 4px solid var(--gold);
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: 0 10px 28px rgba(3,22,47,.05);
+      transition: transform .28s ease, box-shadow .28s ease;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 18px 36px rgba(3,22,47,.12); }
+    .service-icon {
+      width: 48px; height: 48px;
+      display: grid; place-items: center;
+      border-radius: 13px;
+      background: #fff4d9;
+      color: #9b6500;
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+    }
+    .service-card h3 { color: var(--navy); margin: 0 0 8px; font-size: 1.18rem; }
     .service-card p { color: var(--muted); margin: 0; }
 
     .maintenance { background: #fff; }
     .maintenance-layout { display: grid; grid-template-columns: 1.05fr .95fr; gap: 34px; align-items: start; }
-    .maintenance-copy h2 { color: var(--navy); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2rem,4vw,2.8rem); line-height: 1.15; margin: 8px 0 15px; }
+    .maintenance-copy h2 {
+      color: var(--navy);
+      font-size: clamp(2rem,4vw,2.8rem);
+      line-height: 1.15;
+      margin: 8px 0 15px;
+    }
     .maintenance-copy > p { color: var(--muted); }
     .benefit-list { display: grid; gap: 13px; margin-top: 25px; }
     .benefit { display: flex; align-items: flex-start; gap: 12px; }
-    .benefit-mark { color: var(--gold); font-size: 1.25rem; font-weight: 900; }
-    .price-panel { background: var(--navy); color: white; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }
-    .price-panel-head { background: linear-gradient(100deg, #b77b06, var(--gold)); color: white; padding: 20px 25px; }
-    .price-panel-head h3 { margin: 0; font-size: 1.35rem; text-transform: uppercase; letter-spacing: .04em; }
+    .benefit-mark { color: var(--gold); font-size: 1.15rem; font-weight: 900; }
+    .price-panel {
+      background: var(--navy);
+      color: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: box-shadow .28s ease;
+    }
+    .price-panel:hover { box-shadow: 0 22px 55px rgba(3,22,47,.18); }
+    .price-panel-head {
+      background: linear-gradient(100deg, #b77b06, var(--gold));
+      color: white;
+      padding: 20px 25px;
+    }
+    .price-panel-head h3 { margin: 0; font-size: 1.28rem; letter-spacing: .02em; }
     .price-content { padding: 25px; }
-    .price-row { display: flex; justify-content: space-between; gap: 18px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.16); }
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(255,255,255,.16);
+    }
     .price-row:last-of-type { border-bottom: 0; }
     .price-row strong { text-align: right; color: #ffcf63; white-space: nowrap; }
     .regular-price { color: #cbd4e1; font-size: .9rem; margin: -4px 0 8px; }
     .save { color: #ffcf63; font-weight: 800; }
     .gst-note { color: #cbd4e1; font-size: .82rem; margin-top: 15px; }
 
-    .addons { background: #f2efe8; }
+    .addons { background: linear-gradient(180deg, #eef4f9, #f7fafc); }
     .addon-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 13px; max-width: 850px; margin: 0 auto; }
-    .addon { background: white; border: 1px solid #e7e0d2; border-radius: 11px; padding: 16px 19px; display: flex; justify-content: space-between; gap: 15px; }
+    .addon {
+      background: white;
+      border: 1px solid #dde5ee;
+      border-radius: 12px;
+      padding: 16px 19px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .addon:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(3,22,47,.08); }
     .addon strong { color: var(--navy); white-space: nowrap; }
-    .fine-print { max-width: 850px; margin: 25px auto 0; padding: 18px 20px; border-left: 4px solid var(--gold); background: #fff; color: #596273; font-size: .9rem; }
+    .fine-print {
+      max-width: 850px;
+      margin: 25px auto 0;
+      padding: 18px 20px;
+      border-left: 4px solid var(--gold);
+      background: #fff;
+      color: #596273;
+      font-size: .9rem;
+    }
 
-    .why { background: var(--navy); color: white; }
+    .sydney-section { background: var(--navy-deep); color: white; overflow: hidden; position: relative; }
+    .sydney-section::before {
+      content: "";
+      position: absolute;
+      width: 420px; height: 420px;
+      right: -120px; bottom: -180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217,154,19,.18), transparent 70%);
+    }
+    .sydney-section .section-heading h2 { color: white; }
+    .sydney-section .section-heading p { color: #c9d4e3; }
+    .sydney-section .section-heading .eyebrow { color: var(--gold-light); }
+    .suburb-cloud {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 920px;
+      margin: 0 auto 28px;
+    }
+    .suburb {
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(242,189,61,.28);
+      background: rgba(255,255,255,.04);
+      color: #f2f6fb;
+      font-size: .9rem;
+      font-weight: 600;
+    }
+    .sydney-cta {
+      position: relative;
+      text-align: center;
+    }
+    .sydney-cta p { color: #c9d4e3; margin: 0 0 16px; }
+
+    .why { background: linear-gradient(180deg, #07305f, var(--navy)); color: white; }
     .why .section-heading h2 { color: white; }
     .why .section-heading p { color: #cbd4e1; }
     .why .section-heading .eyebrow { color: var(--gold-light); }
-    .why-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
-    .why-item { text-align: center; padding: 25px 15px; border: 1px solid rgba(242,189,61,.28); border-radius: 14px; }
-    .why-item span { display: block; color: var(--gold-light); font-size: 2rem; margin-bottom: 12px; }
-    .why-item h3 { margin: 0; font-size: 1rem; }
+    .why-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+    .why-item {
+      text-align: center;
+      padding: 26px 16px;
+      border: 1px solid rgba(242,189,61,.28);
+      border-radius: 16px;
+      background: rgba(255,255,255,.03);
+      transition: transform .28s ease, box-shadow .28s ease;
+    }
+    .why-item:hover { transform: translateY(-6px); box-shadow: 0 16px 35px rgba(3,22,47,.2); }
+    .why-item span { display: block; color: var(--gold-light); font-size: 1.8rem; margin-bottom: 12px; }
+    .why-item h3 { margin: 0; font-size: 1rem; line-height: 1.35; font-family: var(--font-body); font-weight: 700; }
+
+    .quote-section { background: #eef4f9; }
+    .quote-wrap { display: grid; grid-template-columns: .85fr 1.15fr; gap: 28px; align-items: stretch; }
+    .quote-intro {
+      background: linear-gradient(165deg, var(--navy), #0a315c);
+      color: #fff;
+      border-radius: 18px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .quote-intro h2 { font-size: clamp(2rem,4vw,2.7rem); line-height: 1.12; margin: 10px 0 15px; }
+    .quote-intro p { color: #d9e2ef; }
+    .quote-form {
+      background: #fff;
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+    .quote-form h3 { color: var(--navy); font-size: 1.7rem; margin-bottom: 6px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-weight: 700; color: #26364c; font-size: .9rem; }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      border: 1px solid #d7dce4;
+      border-radius: 10px;
+      padding: 13px 14px;
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+      outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(217,154,19,.15);
+    }
+    .field textarea { min-height: 115px; resize: vertical; }
+    .quote-form .button { width: 100%; cursor: pointer; margin-top: 17px; font: 700 1rem var(--font-body); }
+    .quote-form .button:disabled { opacity: .72; cursor: wait; transform: none; }
+    .form-note { color: var(--muted); font-size: .8rem; margin: 12px 0 0; }
+    .form-status { display: none; margin-top: 14px; padding: 12px 14px; border-radius: 10px; font-size: .9rem; line-height: 1.45; }
+    .form-status.show { display: block; }
+    .form-status.success { background: #eaf7ef; color: #14532d; border: 1px solid #b7e4c7; }
+    .form-status.error { background: #fdecec; color: #7f1d1d; border: 1px solid #f5c2c2; }
+    .form-status.info { background: #fff8e8; color: #7a4d00; border: 1px solid #f0d59a; }
 
     .contact { background: #fff; }
-    .contact-card { display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; border-radius: 20px; box-shadow: var(--shadow); }
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      transition: box-shadow .28s ease;
+    }
+    .contact-card:hover { box-shadow: 0 22px 55px rgba(3,22,47,.18); }
     .contact-info { background: var(--navy); color: white; padding: 42px; }
-    .contact-info h2 { font-family: Georgia, 'Times New Roman', serif; font-size: 2.3rem; margin-bottom: 12px; }
+    .contact-info h2 { font-size: 2.3rem; margin-bottom: 12px; }
     .contact-info p { color: #d6deea; }
     .contact-detail { display: flex; gap: 14px; align-items: center; margin-top: 22px; }
-    .contact-detail .symbol { color: var(--gold-light); font-size: 1.45rem; width: 28px; text-align: center; }
+    .contact-detail .symbol { color: var(--gold-light); font-size: 1.35rem; width: 28px; text-align: center; }
     .contact-detail small { display: block; color: #c3cedd; }
     .contact-detail a { font-weight: 700; }
-    .contact-cta { padding: 42px; display: flex; flex-direction: column; justify-content: center; background: #fbf9f4; }
+    .contact-cta {
+      padding: 42px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        linear-gradient(180deg, rgba(232,243,251,.65), transparent),
+        #fbfcfe;
+    }
     .contact-cta h3 { color: var(--navy); font-size: 1.6rem; margin-bottom: 10px; }
     .contact-cta p { color: var(--muted); }
     .contact-cta .button { align-self: flex-start; margin-top: 12px; }
 
-    footer { background: var(--navy-deep); color: #d9e0e9; padding: 25px 0; font-size: .88rem; }
+    footer {
+      background: var(--navy-deep);
+      color: #d9e0e9;
+      padding: 28px 0 96px;
+      font-size: .88rem;
+    }
     .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
-    @media (max-width: 850px) {
-      .nav-links { gap: 14px; font-size: .85rem; }
-      .nav-cta { padding: 10px 14px; }
-      .maintenance-layout { grid-template-columns: 1fr; }
-      .why-grid { grid-template-columns: repeat(2,1fr); }
+    .mobile-cta {
+      display: none;
+      position: fixed;
+      left: 12px; right: 12px; bottom: 12px;
+      z-index: 40;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 16px;
+      background: rgba(3,22,47,.94);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 14px 34px rgba(3,22,47,.28);
+      border: 1px solid rgba(242,189,61,.3);
     }
+    .mobile-cta a {
+      flex: 1;
+      text-align: center;
+      border-radius: 12px;
+      padding: 13px 10px;
+      font-weight: 800;
+      font-size: .92rem;
+    }
+    .mobile-cta .call {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,.28);
+    }
+    .mobile-cta .quote {
+      background: linear-gradient(180deg, var(--gold-light), var(--gold));
+      color: var(--navy-deep);
+    }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @keyframes heroEnter {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      .trust-panel { grid-template-columns: repeat(2, 1fr); }
+      .trust-item:nth-child(2) { border-right: 0; }
+      .trust-item:nth-child(1),
+      .trust-item:nth-child(2) { border-bottom: 1px solid rgba(6,31,64,.07); }
+      .air-grid, .maintenance-layout, .quote-wrap, .contact-card { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
     @media (max-width: 680px) {
-      .container { width: min(100% - 30px, 1120px); }
-      .nav { min-height: 72px; }
-      .brand-name { font-size: 1.5rem; }
-      .brand-sub { font-size: .68rem; }
-      .brand-mark { width: 42px; height: 42px; }
+      .container { width: min(100% - 28px, 1120px); }
+      .topbar { font-size: .76rem; text-align: center; }
+      .topbar-inner { justify-content: center; }
+      .brand-logo-img { width: 142px; max-width: 52vw; height: 49px; }
       .menu-toggle { display: block; }
+      .nav { min-height: 68px; }
       .nav-links {
         display: none;
         position: absolute;
-        top: 72px; left: 0; right: 0;
-        padding: 18px 22px 22px;
+        top: 68px; left: 0; right: 0;
+        padding: 14px 20px 20px;
         background: var(--navy-deep);
         flex-direction: column;
         align-items: stretch;
         border-bottom: 2px solid var(--gold);
+        gap: 8px;
       }
       .nav-links.open { display: flex; }
-      .nav-links a { padding: 7px 0; }
-      .nav-cta { text-align: center; }
-      .hero { padding: 70px 0 66px; }
-      .trust-inner { grid-template-columns: repeat(2,1fr); font-size: .82rem; }
-      .section { padding: 62px 0; }
-      .services-grid { grid-template-columns: 1fr; }
-      .addon-grid { grid-template-columns: 1fr; }
-      .why-grid { grid-template-columns: 1fr 1fr; }
-      .contact-card { grid-template-columns: 1fr; }
-      .contact-info, .contact-cta { padding: 30px 25px; }
-      .price-row { font-size: .92rem; }
-    }
-    @media (max-width: 390px) {
-      .brand-name { font-size: 1.3rem; }
-      .brand-sub { font-size: .61rem; }
-      .why-grid { grid-template-columns: 1fr; }
-      .price-content { padding: 19px; }
-    }
-
-    /* Waratech premium refresh */
-    .brand-logo-img { width: 230px; max-width: 34vw; height: 66px; object-fit: contain; object-position: left center; border-radius: 5px; }
-    .hero { background-image: linear-gradient(90deg, rgba(3,22,47,.97) 0%, rgba(3,22,47,.88) 43%, rgba(3,22,47,.23) 100%), url('waratech-hvac-hero.jpg'); background-size: cover; background-position: center 48%; }
-    .hero::before { content:""; position:absolute; inset:auto -4% -56px -4%; height:95px; background:var(--gold); transform:rotate(-2deg); opacity:.95; }
-    .hero::after { z-index:0; }
-    .hero-content { animation: heroEnter .85s ease both; }
-    .service-card, .price-panel, .why-item, .contact-card { transition: transform .28s ease, box-shadow .28s ease; }
-    .service-card:hover, .why-item:hover { transform: translateY(-6px); box-shadow: 0 16px 35px rgba(3,22,47,.13); }
-    .price-panel:hover, .contact-card:hover { box-shadow: 0 22px 55px rgba(3,22,47,.18); }
-    .reveal { opacity:0; transform:translateY(22px); transition:opacity .65s ease, transform .65s ease; }
-    .reveal.visible { opacity:1; transform:translateY(0); }
-    .quote-section { background:#f2efe8; }
-    .quote-wrap { display:grid; grid-template-columns:.85fr 1.15fr; gap:28px; align-items:stretch; }
-    .quote-intro { background:var(--navy); color:#fff; border-radius:18px; padding:36px; display:flex; flex-direction:column; justify-content:center; }
-    .quote-intro h2 { font:700 clamp(2rem,4vw,2.7rem)/1.12 Georgia,serif; margin:10px 0 15px; }
-    .quote-intro p { color:#d9e2ef; }
-    .quote-form { background:#fff; border-radius:18px; padding:32px; box-shadow:var(--shadow); }
-    .quote-form h3 { color:var(--navy); font:700 1.7rem Georgia,serif; margin-bottom:6px; }
-    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:15px; }
-    .field { display:flex; flex-direction:column; gap:6px; }
-    .field.full { grid-column:1/-1; }
-    .field label { font-weight:700; color:#26364c; font-size:.9rem; }
-    .field input, .field select, .field textarea { width:100%; border:1px solid #d7dce4; border-radius:9px; padding:13px 14px; font:inherit; color:var(--ink); background:#fff; outline:none; }
-    .field input:focus, .field select:focus, .field textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(217,154,19,.15); }
-    .field textarea { min-height:115px; resize:vertical; }
-    .quote-form .button { width:100%; cursor:pointer; margin-top:17px; font:700 1rem Arial,sans-serif; }
-    .quote-form .button:disabled { opacity:.72; cursor:wait; transform:none; }
-    .form-note { color:var(--muted); font-size:.8rem; margin:12px 0 0; }
-    .form-status { display:none; margin-top:14px; padding:12px 14px; border-radius:10px; font-size:.9rem; line-height:1.45; }
-    .form-status.show { display:block; }
-    .form-status.success { background:#eaf7ef; color:#14532d; border:1px solid #b7e4c7; }
-    .form-status.error { background:#fdecec; color:#7f1d1d; border:1px solid #f5c2c2; }
-    .form-status.info { background:#fff8e8; color:#7a4d00; border:1px solid #f0d59a; }
-    @keyframes heroEnter { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
-    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation:none!important; transition:none!important; } .reveal { opacity:1; transform:none; } }
-    @media(max-width:680px) { .brand-logo-img { width:190px; max-width:60vw; height:58px; } .quote-wrap { grid-template-columns:1fr; } .quote-form,.quote-intro { padding:25px; } .form-grid { grid-template-columns:1fr; } .field.full { grid-column:auto; } .hero { background-position:58% center; } }
-
-
-    /* Mobile-first refinements for phones */
-    @media (max-width: 680px) {
-      body { font-size: 15px; }
-      .topbar { padding: 7px 0; font-size: .76rem; }
-      .topbar-inner { justify-content: center; text-align: center; gap: 3px 12px; }
-      .topbar-inner span { width: 100%; }
-      .nav { min-height: 68px; gap: 10px; }
-      .brand { gap: 8px; }
-      .brand-logo-img { width: 142px !important; max-width: 52vw !important; height: 49px !important; }
-      .brand-name { font-size: 1.34rem; }
-      .brand-sub { font-size: .58rem; line-height: 1.15; }
-      .menu-toggle { display: block; min-width: 42px; min-height: 42px; }
-      .nav-links { top: 68px; padding: 14px 20px 20px; gap: 8px; }
-      .nav-links a { padding: 10px 4px; font-size: .98rem; }
-      .nav-cta { width: 100%; }
-      .hero { padding: 58px 0 52px; background-position: 61% center; }
-      .hero::before { bottom: -45px; height: 65px; }
-      .hero-content { max-width: 100%; }
-      .eyebrow { font-size: .68rem; letter-spacing: .13em; }
-      h1 { font-size: clamp(2.25rem, 10vw, 3.15rem); line-height: 1.04; margin: 13px 0; }
-      .hero p { font-size: 1rem; line-height: 1.5; max-width: 34rem; }
-      .hero-actions { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 22px; }
+      .nav-links a { padding: 10px 4px; }
+      .nav-cta { text-align: center; width: 100%; }
+      .hero { min-height: auto; padding: 58px 0 72px; background-position: 61% center; }
+      h1 { font-size: clamp(2.35rem, 10vw, 3.2rem); max-width: none; }
+      .hero p { font-size: 1rem; }
+      .hero-actions { display: grid; grid-template-columns: 1fr; }
       .hero-actions .button { width: 100%; min-height: 49px; }
-      .hero-tags { gap: 7px; margin-top: 22px; }
-      .hero-tags span { font-size: .76rem; padding: 5px 10px; }
-      .trust-inner { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0; padding: 8px 0; }
-      .trust-inner span { padding: 9px 4px; font-size: .82rem; }
-      .section { padding: 48px 0; }
-      .section-heading { margin-bottom: 25px; }
-      .section-heading h2 { font-size: 2rem; line-height: 1.13; }
-      .section-heading p { font-size: .94rem; }
-      .services-grid { grid-template-columns: 1fr; gap: 12px; }
-      .service-card { padding: 20px; display: grid; grid-template-columns: 48px 1fr; column-gap: 13px; align-items: center; }
+      .trust-strip { margin-top: -28px; }
+      .section { padding: 56px 0; }
+      .services-grid, .addon-grid, .why-grid { grid-template-columns: 1fr; }
+      .service-card {
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        column-gap: 13px;
+        align-items: center;
+        padding: 20px;
+      }
       .service-icon { grid-row: span 2; margin: 0; }
-      .service-card h3 { margin: 0 0 3px; font-size: 1.08rem; }
-      .service-card p { font-size: .9rem; }
-      .maintenance-layout { gap: 22px; }
-      .maintenance-copy h2 { font-size: 2rem; }
-      .maintenance-copy > p { font-size: .95rem; }
-      .benefit-list { gap: 11px; margin-top: 18px; }
-      .price-panel { border-radius: 14px; }
-      .price-panel-head { padding: 15px 18px; }
-      .price-panel-head h3 { font-size: 1.12rem; }
-      .price-content { padding: 17px; }
-      .price-row { align-items: flex-start; gap: 10px; font-size: .9rem; padding: 12px 0; }
-      .price-row strong { font-size: .88rem; }
-      .regular-price { font-size: .82rem; }
-      .gst-note { font-size: .78rem; }
-      .addon-grid { grid-template-columns: 1fr; gap: 9px; }
-      .addon { padding: 13px 14px; align-items: center; font-size: .9rem; }
-      .addon strong { font-size: .9rem; }
-      .fine-print { margin-top: 17px; padding: 14px; font-size: .82rem; }
-      .why-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
-      .why-item { padding: 18px 10px; }
-      .why-item span { font-size: 1.7rem; margin-bottom: 6px; }
-      .why-item h3 { font-size: .88rem; line-height: 1.3; }
-      .quote-wrap { grid-template-columns: 1fr !important; gap: 14px !important; }
-      .quote-intro { padding: 24px !important; border-radius: 15px; }
-      .quote-intro h2 { font-size: 2rem !important; }
-      .quote-intro p { font-size: .92rem; }
-      .quote-form { padding: 21px !important; border-radius: 15px; }
-      .quote-form h3 { font-size: 1.45rem; }
-      .form-grid { grid-template-columns: 1fr !important; gap: 12px; }
-      .field.full { grid-column: auto !important; }
+      .air-copy, .air-visual, .quote-form, .quote-intro, .contact-info, .contact-cta { padding: 24px; }
+      .quality-row { grid-template-columns: 86px 1fr 46px; font-size: .84rem; }
+      .mobile-cta { display: flex; }
+      footer { padding-bottom: 110px; text-align: center; }
+      .footer-inner { justify-content: center; }
       .field input, .field select, .field textarea { min-height: 46px; font-size: 16px; }
-      .field textarea { min-height: 110px; }
-      .quote-form .button { width: 100%; min-height: 49px; }
-      .form-note { font-size: .76rem; }
-      .contact-card { grid-template-columns: 1fr; border-radius: 15px; }
-      .contact-info, .contact-cta { padding: 25px 21px; }
-      .contact-info h2 { font-size: 2rem; }
-      .contact-detail { margin-top: 17px; }
-      .contact-detail a { overflow-wrap: anywhere; }
-      .contact-cta .button { width: 100%; align-self: stretch; }
-      footer { padding: 21px 0; font-size: .78rem; text-align: center; }
-      .footer-inner { justify-content: center; gap: 8px; }
     }
-    @media (max-width: 380px) {
-      .brand-logo-img { width: 125px !important; }
-      .brand-name { font-size: 1.2rem; }
-      .brand-sub { font-size: .52rem; }
-      .price-row { font-size: .82rem; }
-      .price-row strong { font-size: .82rem; }
-      .addon { font-size: .84rem; }
-    }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+      .quality-row .meter-fill { width: var(--level); }
     }
-
   </style>
 </head>
 <body>
   <div class="topbar">
     <div class="container topbar-inner">
-      <span>Air Conditioning–Refrigeration Service</span>
+      <span class="topbar-badge">Sydney-based healthy air specialists</span>
       <span><a href="tel:+61433868646">+61 433 868 646</a> &nbsp;|&nbsp; <a href="mailto:waratechair@gmail.com">waratechair@gmail.com</a></span>
     </div>
   </div>
@@ -382,10 +705,11 @@
       <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleMenu()">☰</button>
       <nav class="nav-links" id="navLinks">
         <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#air-quality" onclick="closeMenu()">Healthy Air</a>
         <a href="#services" onclick="closeMenu()">Services</a>
         <a href="#maintenance" onclick="closeMenu()">Pricing</a>
+        <a href="#sydney" onclick="closeMenu()">Sydney</a>
         <a href="#quote" onclick="closeMenu()">Get a Quote</a>
-        <a href="#why-us" onclick="closeMenu()">Why Service?</a>
         <a href="#contact" class="nav-cta" onclick="closeMenu()">Contact Us</a>
       </nav>
     </div>
@@ -394,62 +718,140 @@
   <main>
     <section class="hero" id="home">
       <div class="container hero-content">
-        <div class="eyebrow">Residential • Commercial • Sydney</div>
-        <h1>Comfort you can count on. Service you can trust.</h1>
-        <p>Waratech provides air conditioning and refrigeration services, including residential and commercial solutions, installation, sales and preventative maintenance.</p>
+        <div class="eyebrow">Waratech · Greater Sydney</div>
+        <h1>Healthier air. Reliable comfort.</h1>
+        <p>Waratech cleans, services and installs air conditioning systems so Sydney homes and workplaces breathe better, feel cooler and run more efficiently.</p>
         <div class="hero-actions">
-          <a class="button" href="#quote">Request a Quote</a>
+          <a class="button" href="#quote">Get a free quote</a>
           <a class="button button-outline" href="tel:+61433868646">Call +61 433 868 646</a>
         </div>
-        <div class="hero-tags">
-          <span>Residential</span><span>Commercial</span><span>Service</span><span>Installation</span><span>Sales</span>
+        <div class="hero-proof">
+          <span>Health-focused servicing</span>
+          <span>Local Sydney team</span>
+          <span>Residential & commercial</span>
         </div>
       </div>
     </section>
 
     <div class="trust-strip">
-      <div class="container trust-inner">
-        <span>Residential Service</span><span>Commercial Service</span><span>Installation</span><span>Sales</span>
+      <div class="container">
+        <div class="trust-panel reveal">
+          <div class="trust-item">
+            <strong>Cleaner indoor air</strong>
+            <span>Less dust, mould & bacteria</span>
+          </div>
+          <div class="trust-item">
+            <strong>Sydney based</strong>
+            <span>Local service you can book</span>
+          </div>
+          <div class="trust-item">
+            <strong>Fair maintenance pricing</strong>
+            <span>From $135 incl. GST</span>
+          </div>
+          <div class="trust-item">
+            <strong>Fast response</strong>
+            <span>Call or request a quote today</span>
+          </div>
+        </div>
       </div>
     </div>
+
+    <section class="section air-section" id="air-quality">
+      <div class="container air-grid">
+        <div class="air-copy reveal">
+          <div class="eyebrow">Why healthy air matters</div>
+          <h2>Good quality air starts with a clean system.</h2>
+          <p>Dirty filters, coils and ducts can circulate dust, allergens and bacteria through your space. Regular Waratech servicing helps restore cleaner airflow and healthier comfort.</p>
+          <div class="air-points">
+            <div class="air-point">
+              <div class="mark">01</div>
+              <div>
+                <strong>Fresher everyday breathing</strong>
+                <span>Reduce buildup that can affect indoor air quality at home or work.</span>
+              </div>
+            </div>
+            <div class="air-point">
+              <div class="mark">02</div>
+              <div>
+                <strong>Better comfort in Sydney heat</strong>
+                <span>Cleaner systems cool more effectively when temperatures climb.</span>
+              </div>
+            </div>
+            <div class="air-point">
+              <div class="mark">03</div>
+              <div>
+                <strong>Health-minded maintenance</strong>
+                <span>Optional anti-bacterial and coil treatments for extra protection.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="air-visual reveal">
+          <h3>What customers notice after a service</h3>
+          <p>A properly cleaned system does more than cool a room — it supports healthier, fresher air where you live and work.</p>
+          <div class="quality-meter">
+            <div class="quality-row" style="--level:92%">
+              <span>Air freshness</span>
+              <div class="meter-track"><div class="meter-fill"></div></div>
+              <em>High</em>
+            </div>
+            <div class="quality-row" style="--level:88%">
+              <span>Cooling power</span>
+              <div class="meter-track"><div class="meter-fill"></div></div>
+              <em>Strong</em>
+            </div>
+            <div class="quality-row" style="--level:85%">
+              <span>Energy efficiency</span>
+              <div class="meter-track"><div class="meter-fill"></div></div>
+              <em>Better</em>
+            </div>
+            <div class="quality-row" style="--level:80%">
+              <span>System longevity</span>
+              <div class="meter-track"><div class="meter-fill"></div></div>
+              <em>Protected</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="section" id="services">
       <div class="container">
         <div class="section-heading">
           <div class="eyebrow">What we do</div>
-          <h2>Air conditioning solutions</h2>
-          <p>From everyday home comfort to commercial air conditioning needs, get in touch with Waratech to discuss your requirements.</p>
+          <h2>Complete air conditioning care for Sydney</h2>
+          <p>From healthier preventative cleans to installation, repairs and refrigeration — Waratech covers residential and commercial needs across the city.</p>
         </div>
         <div class="services-grid">
-          <article class="service-card">
+          <article class="service-card reveal">
             <div class="service-icon">⌂</div>
             <h3>Residential</h3>
-            <p>Air conditioning services for apartments, units and homes.</p>
+            <p>Healthier comfort for apartments, units and family homes across Sydney.</p>
           </article>
-          <article class="service-card">
+          <article class="service-card reveal">
             <div class="service-icon">▦</div>
             <h3>Commercial</h3>
-            <p>Air conditioning and refrigeration service solutions for commercial spaces.</p>
+            <p>Reliable air conditioning and refrigeration service for workplaces and retail spaces.</p>
           </article>
-          <article class="service-card">
+          <article class="service-card reveal">
             <div class="service-icon">❄</div>
             <h3>Service & Maintenance</h3>
-            <p>Preventative maintenance, cleaning and servicing to help keep your system operating efficiently.</p>
+            <p>Deep cleans and preventative servicing that improve airflow, hygiene and efficiency.</p>
           </article>
-          <article class="service-card">
+          <article class="service-card reveal">
             <div class="service-icon">⚙</div>
             <h3>Installation</h3>
-            <p>Air conditioning installation services. Contact us to discuss your system and requirements.</p>
+            <p>Professional air conditioning installation tailored to your space and usage.</p>
           </article>
-          <article class="service-card">
+          <article class="service-card reveal">
             <div class="service-icon">▣</div>
             <h3>Sales</h3>
-            <p>Air conditioning and refrigeration sales enquiries.</p>
+            <p>Guidance on air conditioning and refrigeration systems that suit Sydney conditions.</p>
           </article>
-          <article class="service-card">
+          <article class="service-card reveal">
             <div class="service-icon">✚</div>
             <h3>Refrigeration</h3>
-            <p>Refrigeration service enquiries for residential and commercial customers.</p>
+            <p>Refrigeration service and support for residential and commercial customers.</p>
           </article>
         </div>
       </div>
@@ -457,18 +859,18 @@
 
     <section class="section maintenance" id="maintenance">
       <div class="container maintenance-layout">
-        <div class="maintenance-copy">
-          <div class="eyebrow">Keep your system running well</div>
+        <div class="maintenance-copy reveal">
+          <div class="eyebrow">Keep your system healthy</div>
           <h2>Preventative maintenance, clean & service</h2>
-          <p>Take advantage of our exclusive bulk discount on air conditioning preventative maintenance. Regular servicing enhances system efficiency and can lead to significant savings on your electricity bill.</p>
+          <p>Take advantage of our exclusive bulk discount on air conditioning preventative maintenance. Regular servicing improves indoor air quality, boosts efficiency and can lower electricity bills.</p>
           <div class="benefit-list">
-            <div class="benefit"><span class="benefit-mark">➜</span><span>Help extend the life of your air conditioner.</span></div>
-            <div class="benefit"><span class="benefit-mark">➜</span><span>Help prevent system blockages.</span></div>
-            <div class="benefit"><span class="benefit-mark">➜</span><span>Support efficient operation and lower energy bills.</span></div>
-            <div class="benefit"><span class="benefit-mark">➜</span><span>Save money with scheduled maintenance and bulk pricing.</span></div>
+            <div class="benefit"><span class="benefit-mark">➜</span><span>Support healthier indoor air with a thorough system clean.</span></div>
+            <div class="benefit"><span class="benefit-mark">➜</span><span>Help prevent dust, mould and blockage build-up.</span></div>
+            <div class="benefit"><span class="benefit-mark">➜</span><span>Improve cooling performance through Sydney’s warmer months.</span></div>
+            <div class="benefit"><span class="benefit-mark">➜</span><span>Save with scheduled maintenance and bulk pricing.</span></div>
           </div>
         </div>
-        <aside class="price-panel" aria-label="Preventative maintenance pricing">
+        <aside class="price-panel reveal" aria-label="Preventative maintenance pricing">
           <div class="price-panel-head"><h3>Preventative maintenance pricing</h3></div>
           <div class="price-content">
             <div class="price-row"><span>Single system (apartment/unit)</span><strong>$135.00</strong></div>
@@ -485,18 +887,44 @@
       <div class="container">
         <div class="section-heading">
           <div class="eyebrow">Optional extras</div>
-          <h2>Add-on services</h2>
-          <p>Enhance your preventative maintenance service with the following optional treatments.</p>
+          <h2>Air-quality add-on treatments</h2>
+          <p>Upgrade your service with treatments designed to protect your system and support cleaner airflow.</p>
         </div>
         <div class="addon-grid">
-          <div class="addon"><span>Anti-bacterial treatment</span><strong>$30.00</strong></div>
-          <div class="addon"><span>Rust prevention treatment</span><strong>$30.00</strong></div>
-          <div class="addon"><span>Coil coat protection</span><strong>$40.00</strong></div>
-          <div class="addon"><span>Treatment package deal</span><strong>$90.00</strong></div>
-          <div class="addon"><span>Exhaust fan maintenance (each unit)</span><strong>$25.00</strong></div>
+          <div class="addon reveal"><span>Anti-bacterial treatment</span><strong>$30.00</strong></div>
+          <div class="addon reveal"><span>Rust prevention treatment</span><strong>$30.00</strong></div>
+          <div class="addon reveal"><span>Coil coat protection</span><strong>$40.00</strong></div>
+          <div class="addon reveal"><span>Treatment package deal</span><strong>$90.00</strong></div>
+          <div class="addon reveal"><span>Exhaust fan maintenance (each unit)</span><strong>$25.00</strong></div>
         </div>
         <div class="fine-print">
           <strong>Please note:</strong> Parts, refrigerants and labour required for fault diagnosis incur additional costs. All add-on prices include GST. Special pricing applies only on scheduled service days.
+        </div>
+      </div>
+    </section>
+
+    <section class="section sydney-section" id="sydney">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Local to Sydney</div>
+          <h2>Proudly servicing Greater Sydney</h2>
+          <p>From the CBD to the suburbs, Waratech brings trusted air conditioning care closer to home — with clear pricing and easy booking.</p>
+        </div>
+        <div class="suburb-cloud reveal">
+          <span class="suburb">Sydney CBD</span>
+          <span class="suburb">Inner West</span>
+          <span class="suburb">Eastern Suburbs</span>
+          <span class="suburb">North Shore</span>
+          <span class="suburb">Northern Beaches</span>
+          <span class="suburb">Western Sydney</span>
+          <span class="suburb">South West</span>
+          <span class="suburb">Hills District</span>
+          <span class="suburb">Parramatta</span>
+          <span class="suburb">Sutherland Shire</span>
+        </div>
+        <div class="sydney-cta">
+          <p>Not sure if we cover your suburb? Tell us your location in the quote form — we’ll confirm quickly.</p>
+          <a class="button" href="#quote">Check availability</a>
         </div>
       </div>
     </section>
@@ -505,42 +933,41 @@
       <div class="container">
         <div class="section-heading">
           <div class="eyebrow">The value of regular servicing</div>
-          <h2>Why service your A/C?</h2>
-          <p>Regular preventative maintenance helps keep your air conditioning system in better condition.</p>
+          <h2>Why Sydney customers book Waratech</h2>
+          <p>Regular preventative maintenance keeps your air healthier, your system stronger and your running costs lower.</p>
         </div>
         <div class="why-grid">
-          <div class="why-item"><span>⌛</span><h3>Extend the life of your air conditioner</h3></div>
-          <div class="why-item"><span>✧</span><h3>Help prevent system blockages</h3></div>
-          <div class="why-item"><span>↓</span><h3>Lower energy bills</h3></div>
-          <div class="why-item"><span>$</span><h3>Save money</h3></div>
+          <div class="why-item reveal"><span>◎</span><h3>Healthier indoor air quality</h3></div>
+          <div class="why-item reveal"><span>⌛</span><h3>Extend the life of your air conditioner</h3></div>
+          <div class="why-item reveal"><span>↓</span><h3>Lower energy bills</h3></div>
+          <div class="why-item reveal"><span>$</span><h3>Save with scheduled pricing</h3></div>
         </div>
       </div>
     </section>
-
 
     <section class="section quote-section" id="quote">
       <div class="container quote-wrap">
         <div class="quote-intro reveal">
           <div class="eyebrow">Let's get started</div>
-          <h2>Request a service quote</h2>
-          <p>Tell us a little about your air conditioning or refrigeration needs. Our team can follow up to discuss the service and scheduling.</p>
+          <h2>Request cleaner air for your Sydney space</h2>
+          <p>Tell us about your air conditioning or refrigeration needs. We’ll follow up to discuss service options and timing.</p>
           <div class="benefit-list">
+            <div class="benefit"><span class="benefit-mark">➜</span><span>Healthy-air cleans & preventative maintenance</span></div>
             <div class="benefit"><span class="benefit-mark">➜</span><span>Residential and commercial enquiries</span></div>
-            <div class="benefit"><span class="benefit-mark">➜</span><span>Preventative maintenance and cleaning</span></div>
-            <div class="benefit"><span class="benefit-mark">➜</span><span>Installation, service and sales</span></div>
+            <div class="benefit"><span class="benefit-mark">➜</span><span>Installation, repairs, sales & refrigeration</span></div>
           </div>
           <p><strong>Prefer to speak with us?</strong><br><a href="tel:+61433868646" style="color:#ffcf63;font-weight:800;">+61 433 868 646</a></p>
         </div>
         <form class="quote-form reveal" id="quoteForm">
           <h3>Get a free quote</h3>
-          <p style="color:var(--muted);margin-top:0;">Complete the form and we will email your enquiry straight to Waratech.</p>
+          <p style="color:var(--muted);margin-top:0;">Complete the form and we’ll email your enquiry straight to Waratech.</p>
           <div class="form-grid">
             <div class="field"><label for="qname">Full name *</label><input id="qname" name="name" autocomplete="name" required placeholder="Your name"></div>
             <div class="field"><label for="qphone">Phone number *</label><input id="qphone" name="phone" type="tel" autocomplete="tel" required placeholder="Your contact number"></div>
             <div class="field"><label for="qemail">Email address *</label><input id="qemail" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
-            <div class="field"><label for="qservice">Service required *</label><select id="qservice" name="service" required><option value="">Select a service</option><option>Residential air conditioning</option><option>Commercial air conditioning</option><option>Preventative maintenance clean & service</option><option>Installation</option><option>Repairs / fault diagnosis</option><option>Refrigeration</option><option>Sales enquiry</option><option>Other</option></select></div>
-            <div class="field full"><label for="qaddress">Suburb / service location</label><input id="qaddress" name="location" placeholder="Your suburb in Sydney"></div>
-            <div class="field full"><label for="qmessage">Message / additional details</label><textarea id="qmessage" name="message" placeholder="Tell us about your system, number of units or preferred service date..."></textarea></div>
+            <div class="field"><label for="qservice">Service required *</label><select id="qservice" name="service" required><option value="">Select a service</option><option>Residential air conditioning</option><option>Commercial air conditioning</option><option>Preventative maintenance clean & service</option><option>Healthy air / anti-bacterial treatment</option><option>Installation</option><option>Repairs / fault diagnosis</option><option>Refrigeration</option><option>Sales enquiry</option><option>Other</option></select></div>
+            <div class="field full"><label for="qaddress">Sydney suburb / service location *</label><input id="qaddress" name="location" required placeholder="e.g. Parramatta, Bondi, Chatswood"></div>
+            <div class="field full"><label for="qmessage">Message / additional details</label><textarea id="qmessage" name="message" placeholder="Tell us about your system, number of units, air-quality concerns or preferred service date..."></textarea></div>
           </div>
           <button class="button" type="submit" id="quoteSubmit">Send quote request</button>
           <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
@@ -551,14 +978,14 @@
 
     <section class="section contact" id="contact">
       <div class="container">
-        <div class="contact-card">
+        <div class="contact-card reveal">
           <div class="contact-info">
             <div class="eyebrow">Get in touch</div>
-            <h2>Let's talk about your A/C needs.</h2>
-            <p>Contact Waratech for air conditioning and refrigeration service enquiries in Sydney.</p>
+            <h2>Ready for healthier air at home or work?</h2>
+            <p>Contact Waratech for air conditioning and refrigeration service across Sydney.</p>
             <div class="contact-detail"><span class="symbol">☎</span><div><small>Call us</small><a href="tel:+61433868646">+61 433 868 646</a></div></div>
             <div class="contact-detail"><span class="symbol">✉</span><div><small>Email us</small><a href="mailto:waratechair@gmail.com">waratechair@gmail.com</a></div></div>
-            <div class="contact-detail"><span class="symbol">⌖</span><div><small>Service location</small><strong>Sydney, Australia</strong></div></div>
+            <div class="contact-detail"><span class="symbol">⌖</span><div><small>Service area</small><strong>Greater Sydney, Australia</strong></div></div>
           </div>
           <div class="contact-cta">
             <h3>Schedule your maintenance</h3>
@@ -573,10 +1000,15 @@
 
   <footer>
     <div class="container footer-inner">
-      <span>© <span id="year"></span> Waratech Air Conditioning-Refrigeration Service</span>
-      <span>Residential • Commercial • Service • Installation • Sales</span>
+      <span>© <span id="year"></span> Waratech Air Conditioning-Refrigeration Service · Sydney</span>
+      <span>Healthier air · Residential · Commercial · Service · Installation</span>
     </div>
   </footer>
+
+  <div class="mobile-cta" aria-label="Quick actions">
+    <a class="call" href="tel:+61433868646">Call now</a>
+    <a class="quote" href="#quote">Free quote</a>
+  </div>
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
   <script>
@@ -685,8 +1117,8 @@
         }
       });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.service-card, .maintenance-copy, .price-panel, .addon, .why-item, .contact-card, .quote-intro, .quote-form').forEach(el => {
-      el.classList.add('reveal');
+
+    document.querySelectorAll('.reveal, .quality-row').forEach(el => {
       revealObserver.observe(el);
     });
   </script>
