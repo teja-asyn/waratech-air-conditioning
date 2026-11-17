@@ -1,6 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Waratech">
   <rect width="64" height="64" rx="12" fill="#03162f"/>
-  <path d="M32 10 L38 24 L52 26 L41 36 L44 50 L32 42 L20 50 L23 36 L12 26 L26 24 Z" fill="none" stroke="#f2bd3d" stroke-width="2.2" stroke-linejoin="round"/>
-  <path d="M32 14 L35.5 24.5 L46.5 26 L38 33.5 L40.5 44.5 L32 38.5 L23.5 44.5 L26 33.5 L17.5 26 L28.5 24.5 Z" fill="#d99a13"/>
-  <path d="M14 50 C22 44, 42 44, 50 50" fill="none" stroke="#d99a13" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- outer petals -->
+  <path d="M32 12 C34 20 40 26 46 28 C40 30 35 36 34 44 C33 36 31 36 30 44 C29 36 24 30 18 28 C24 26 30 20 32 12 Z" fill="none" stroke="#f5f7fa" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M20 22 C24 26 26 32 26 38" fill="none" stroke="#f5f7fa" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M44 22 C40 26 38 32 38 38" fill="none" stroke="#f5f7fa" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- gold center petal -->
+  <path d="M32 14 C34.5 22 36 28 36 34 C34 30 30 30 28 34 C28 28 29.5 22 32 14 Z" fill="url(#g)"/>
+  <!-- gold swoosh -->
+  <path d="M16 42 C24 36 40 35 50 42 C40 40 26 40 16 42 Z" fill="url(#g2)"/>
+  <defs>
+    <linearGradient id="g" x1="28" y1="14" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f2bd3d"/>
+      <stop offset="1" stop-color="#d99a13"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="16" y1="36" x2="50" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f2bd3d"/>
+      <stop offset="1" stop-color="#b87d0c"/>
+    </linearGradient>
+  </defs>
 </svg>

@@ -1,595 +1,1177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Waratech Air Conditioning-Refrigeration Service. Residential and commercial air conditioning, installation, sales and preventative maintenance across Sydney.">
-  <meta name="theme-color" content="#03162f">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Waratech Sydney | Professional Air Conditioning Services</title>
+  <meta name="description" content="Waratech delivers professional air conditioning services, repairs, maintenance and installation for Sydney homes and businesses.">
   <meta name="robots" content="index, follow">
   <!-- Replace YOUR-DOMAIN.com with your live domain after deploy -->
   <link rel="canonical" href="https://YOUR-DOMAIN.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Waratech">
-  <meta property="og:title" content="Waratech | Air Conditioning & Refrigeration Service">
-  <meta property="og:description" content="Residential and commercial air conditioning, installation, sales and preventative maintenance across Sydney.">
+  <meta property="og:title" content="Waratech Sydney | Professional Air Conditioning Services">
+  <meta property="og:description" content="Professional air conditioning services, repairs, maintenance and installation across Sydney.">
   <meta property="og:url" content="https://YOUR-DOMAIN.com/">
-  <meta property="og:image" content="https://YOUR-DOMAIN.com/waratech-hvac-hero.jpg">
+  <meta property="og:image" content="https://YOUR-DOMAIN.com/images/home-1-cassette-ocean.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Waratech | Air Conditioning & Refrigeration Service">
-  <meta name="twitter:description" content="Residential and commercial air conditioning, installation, sales and preventative maintenance across Sydney.">
-  <meta name="twitter:image" content="https://YOUR-DOMAIN.com/waratech-hvac-hero.jpg">
+  <meta name="twitter:title" content="Waratech Sydney | Professional Air Conditioning Services">
+  <meta name="twitter:description" content="Professional air conditioning services across Sydney.">
+  <meta name="twitter:image" content="https://YOUR-DOMAIN.com/images/home-1-cassette-ocean.png">
+  <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="waratech-logo.jpg">
-  <title>Waratech | Air Conditioning & Refrigeration Service</title>
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #061f40;
       --navy-deep: #03162f;
+      --navy: #0a315c;
+      --navy-soft: #07305f;
       --gold: #d99a13;
       --gold-light: #f2bd3d;
-      --cream: #f7f5f0;
-      --ink: #15243a;
-      --muted: #667085;
-      --white: #fff;
-      --line: rgba(217,154,19,.35);
-      --shadow: 0 18px 50px rgba(3,22,47,.14);
+      --text: #1c2738;
+      --muted: #5a6a7d;
+      --line: #d7e0ea;
+      --soft: #eef4f9;
+      --mist: #f3f7fb;
+      --white: #ffffff;
+      --shadow: 0 18px 40px rgba(3, 22, 47, .12);
+      --radius: 18px;
+      --font: "Poppins", sans-serif;
     }
-
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 140px; }
     body {
       margin: 0;
-      color: var(--ink);
-      background: var(--cream);
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--white);
       line-height: 1.6;
     }
+    img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
-    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    button, input, select, textarea { font: inherit; }
+    .container { width: min(100% - 40px, 1180px); margin: 0 auto; }
 
-    .topbar {
-      background: var(--navy-deep);
-      color: #f7f7f7;
-      font-size: .9rem;
-      padding: 9px 0;
+    /* Top quote bar */
+    .quote-bar {
+      background: linear-gradient(90deg, var(--navy-deep), var(--navy-soft));
+      color: #fff;
+      padding: 10px 0;
     }
-    .topbar-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-    .topbar a:hover, footer a:hover { color: var(--gold-light); }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(5,28,57,.97);
-      color: var(--white);
-      border-bottom: 2px solid var(--gold);
-      backdrop-filter: blur(10px);
-    }
-    .nav {
-      min-height: 82px;
+    .quote-bar-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 16px;
+      flex-wrap: wrap;
     }
-    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
-    .brand-mark { width: 49px; height: 49px; flex: 0 0 auto; }
-    .brand-name { font-family: Georgia, 'Times New Roman', serif; font-size: 1.8rem; font-weight: 700; line-height: 1; }
-    .brand-sub { display: block; margin-top: 5px; color: #f3e7c8; font-family: Georgia, 'Times New Roman', serif; font-size: .78rem; }
-    .nav-links { display: flex; align-items: center; gap: 25px; font-size: .93rem; }
-    .nav-links a { color: #f5f6f8; }
-    .nav-links a:hover { color: var(--gold-light); }
-    .nav-cta, .button {
+    .quote-bar h3 {
+      margin: 0;
+      font-size: .9rem;
+      letter-spacing: .02em;
+      font-weight: 600;
+      text-transform: none;
+    }
+    .quote-bar a {
+      color: #fff;
+      font-weight: 600;
+      font-size: .95rem;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid rgba(10,49,92,.08);
+      backdrop-filter: blur(10px);
+      overflow: visible;
+    }
+    .nav {
+      position: relative;
+      min-height: 112px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 10px 0;
+    }
+    .brand {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      line-height: 0;
+      z-index: 2;
+    }
+    .brand-logo-img {
+      width: auto;
+      height: 96px;
+      max-width: min(240px, 62vw);
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      border-radius: 0;
+      background: transparent;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      z-index: 101;
+      margin-right: auto;
+    }
+    .nav-links a {
+      position: relative;
+      z-index: 1;
+      color: var(--navy);
+      font-size: .88rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      padding: 8px 14px;
       border-radius: 999px;
-      padding: 12px 21px;
+      transition: background .2s ease, color .2s ease;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(242,189,61,.14);
+      color: var(--navy-deep);
+      box-shadow: inset 0 0 0 1.5px var(--gold);
+    }
+    .nav-book {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(180deg, var(--gold-light), var(--gold));
+      color: var(--navy-deep) !important;
+      border: 2px solid var(--gold);
+      border-radius: 999px;
+      padding: 12px 18px;
       font-weight: 700;
-      background: var(--gold);
+      font-size: .92rem;
+      letter-spacing: .03em;
+      text-transform: none;
+      box-shadow: 0 8px 20px rgba(217,154,19,.28);
+    }
+    .nav-book:hover { background: var(--gold-light); }
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(10,49,92,.2);
+      color: var(--navy);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 1.15rem;
+      min-width: 42px;
+      min-height: 42px;
+      cursor: pointer;
+    }
+
+    /* Buttons */
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(180deg, var(--gold-light), var(--gold));
       color: var(--navy-deep);
       border: 2px solid var(--gold);
-      transition: .2s ease;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+      box-shadow: 0 8px 20px rgba(217,154,19,.28);
     }
-    .nav-cta:hover, .button:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-2px); }
-    .menu-toggle { display: none; background: transparent; color: white; border: 1px solid var(--line); border-radius: 8px; padding: 8px 11px; font-size: 1.2rem; }
+    .button:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .button-navy {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,.55);
+      box-shadow: none;
+    }
+    .button-navy:hover { background: #fff; color: var(--navy-deep); border-color: #fff; }
+    .button-outline {
+      background: transparent;
+      border: 1.5px solid #fff;
+      box-shadow: none;
+    }
+    .button-outline:hover { background: #fff; color: var(--navy-deep); }
 
+    /* Hero */
     .hero {
       position: relative;
       overflow: hidden;
-      color: white;
-      background:
-        radial-gradient(circle at 82% 15%, rgba(217,154,19,.23), transparent 25%),
-        linear-gradient(120deg, var(--navy-deep), var(--navy) 65%, #0a315c);
-      padding: 94px 0 88px;
+      color: #fff;
+      min-height: min(86vh, 740px);
+      display: flex;
+      align-items: center;
+      padding: 70px 0 120px;
     }
-    .hero::after {
+    .hero-slides, .hero-slide, .hero-overlay { position: absolute; inset: 0; }
+    .hero-slide {
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transform: scale(1.05);
+      transition: opacity 1s ease, transform 6s ease;
+    }
+    .hero-slide.is-active { opacity: 1; transform: scale(1); z-index: 1; }
+    .hero-overlay {
+      z-index: 2;
+      background: linear-gradient(105deg, rgba(3,22,47,.96) 0%, rgba(3,22,47,.88) 42%, rgba(3,22,47,.42) 72%, rgba(3,22,47,.28) 100%);
+    }
+    .hero-content { position: relative; z-index: 3; max-width: 720px; }
+    .hero h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+      line-height: 1.12;
+      font-weight: 700;
+      color: #fff;
+    }
+    .hero p {
+      margin: 0;
+      font-size: 1.08rem;
+      color: rgba(255,255,255,.92);
+      max-width: 38rem;
+    }
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+      color: #fff;
+      font-weight: 500;
+      font-size: .95rem;
+    }
+    .hero-proof li { display: inline-flex; align-items: center; gap: 8px; }
+    .hero-proof li::before {
       content: "";
-      position: absolute;
-      width: 620px; height: 620px;
-      border: 1px solid rgba(242,189,61,.22);
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--gold-light);
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .hero-dots {
+      position: absolute; left: 50%; bottom: 36px; transform: translateX(-50%);
+      z-index: 4; display: flex; gap: 10px;
+    }
+    .hero-dot {
+      width: 10px; height: 10px; border-radius: 999px; border: 0; padding: 0;
+      background: rgba(255,255,255,.45); cursor: pointer;
+    }
+    .hero-dot.is-active { background: #fff; transform: scale(1.15); }
+
+    /* Stats strip */
+    .stats-strip {
+      position: relative;
+      z-index: 5;
+      margin-top: -54px;
+      margin-bottom: 10px;
+    }
+    .stats-panel {
+      display: grid;
+      grid-template-columns: 1.1fr 1.4fr;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+    .stats-left {
+      background: var(--navy);
+      color: #fff;
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .stats-left strong {
+      display: block;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    .stats-left span { opacity: .92; font-weight: 500; }
+    .stats-right {
+      background: #f4f6fa;
+      padding: 22px 28px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      align-items: center;
+    }
+    .stat-step {
+      text-align: center;
+      color: var(--navy);
+      font-size: .82rem;
+      font-weight: 600;
+    }
+    .stat-step .num {
+      width: 34px; height: 34px; margin: 0 auto 8px;
       border-radius: 50%;
-      right: -190px; bottom: -420px;
-      box-shadow: 0 0 0 28px rgba(242,189,61,.035), 0 0 0 58px rgba(242,189,61,.025);
+      display: grid; place-items: center;
+      background: var(--navy);
+      color: #fff;
+      font-size: .85rem;
     }
-    .hero-content { position: relative; z-index: 1; max-width: 760px; }
-    .eyebrow { color: var(--gold-light); text-transform: uppercase; letter-spacing: .18em; font-size: .8rem; font-weight: 800; }
-    h1, h2, h3 { margin-top: 0; }
-    h1 { max-width: 760px; margin: 17px 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2.5rem, 6vw, 4.7rem); line-height: 1.06; }
-    .hero p { max-width: 650px; color: #e5eaf1; font-size: 1.15rem; }
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
-    .button-outline { background: transparent; color: white; border-color: rgba(255,255,255,.6); }
-    .button-outline:hover { color: var(--navy-deep); background: white; border-color: white; }
-    .hero-tags { display: flex; gap: 11px; flex-wrap: wrap; margin-top: 35px; }
-    .hero-tags span { border: 1px solid rgba(242,189,61,.45); border-radius: 30px; padding: 7px 13px; color: #f8e8bf; font-size: .88rem; }
 
-    .trust-strip { background: var(--gold); color: var(--navy-deep); }
-    .trust-inner { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; padding: 17px 0; text-align: center; font-weight: 800; font-size: .92rem; }
-    .section { padding: 82px 0; }
-    .section-heading { max-width: 720px; margin: 0 auto 42px; text-align: center; }
-    .section-heading .eyebrow { color: #a56d00; }
-    .section-heading h2 { color: var(--navy); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2rem,4vw,3rem); margin: 10px 0; }
-    .section-heading p { color: var(--muted); margin: 0; }
-    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-    .service-card {
-      background: white;
-      border: 1px solid #ece7dc;
-      border-top: 4px solid var(--gold);
+    /* Sections */
+    .section { padding: 84px 0; }
+    .section-heading { max-width: 760px; margin: 0 auto 40px; text-align: center; }
+    .section-heading .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+    .section-heading h2 {
+      margin: 10px 0 12px;
+      color: var(--navy);
+      font-size: clamp(1.9rem, 3.8vw, 2.6rem);
+      line-height: 1.18;
+      font-weight: 700;
+    }
+    .section-heading p { margin: 0; color: var(--muted); font-size: 1.02rem; }
+
+    /* Booking */
+    .booking { background: var(--mist); }
+    .booking-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+    .booking-copy {
+      background: linear-gradient(160deg, var(--navy), var(--navy-deep));
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 36px 32px;
+    }
+    .booking-copy h2 { margin: 0 0 12px; font-size: 2rem; color: #fff; }
+    .booking-copy p { margin: 0 0 18px; color: rgba(255,255,255,.88); }
+    .booking-copy ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+    .booking-copy li {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-weight: 500;
+    }
+    .booking-copy li::before { content: "✓"; color: var(--gold-light); font-weight: 800; }
+    .booking-form {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(10,49,92,.06);
+    }
+    .booking-form h3 {
+      margin: 0 0 6px;
+      color: var(--navy);
+      font-size: 1.55rem;
+    }
+    .booking-form > p { margin: 0 0 20px; color: var(--muted); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .field { display: grid; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: .84rem; font-weight: 600; color: var(--navy); }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      border: 1px solid #d9dde6;
+      border-radius: 8px;
+      padding: 12px 14px;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(10,49,92,.12);
+    }
+    .field textarea { min-height: 110px; resize: vertical; }
+    .form-status {
+      display: none;
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: .92rem;
+      font-weight: 500;
+    }
+    .form-status.show { display: block; }
+    .form-status.success { background: #eaf7ef; color: #14532d; border: 1px solid #b7e4c7; }
+    .form-status.error { background: #fdecec; color: #7f1d1d; border: 1px solid #f5c2c2; }
+    .form-status.info { background: #fff8e8; color: #7a4d00; border: 1px solid #f0d59a; }
+
+    /* Services cards */
+    .services-home { background: #fff; }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+    .service-tile {
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      min-height: 280px;
+      color: #fff;
+      display: flex;
+      align-items: flex-end;
+      box-shadow: var(--shadow);
+      background-size: cover;
+      background-position: center;
+      transition: transform .28s ease, box-shadow .28s ease;
+    }
+    .service-tile:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(3,22,47,.18); }
+    .service-tile::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(10,49,92,.12) 0%, rgba(3,22,47,.88) 72%);
+    }
+    .service-tile .body { position: relative; z-index: 1; padding: 28px; width: 100%; }
+    .service-tile .num {
+      color: var(--gold-light);
+      font-weight: 700;
+      letter-spacing: .08em;
+      font-size: .82rem;
+      margin-bottom: 8px;
+    }
+    .service-tile h3 { margin: 0 0 8px; font-size: 1.4rem; }
+    .service-tile p { margin: 0 0 14px; color: rgba(255,255,255,.88); font-size: .95rem; max-width: 34ch; }
+    .learn-more {
+      color: var(--gold-light); font-weight: 700; font-size: .95rem;
+    }
+    .service-tile:hover .learn-more { color: #fff; }
+
+    /* About */
+    .about { background: var(--soft); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .about-copy h2 {
+      margin: 8px 0 14px;
+      color: var(--navy);
+      font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+      line-height: 1.2;
+    }
+    .about-copy > p { color: var(--muted); margin: 0 0 18px; }
+    .about-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; }
+    .about-list li {
+      background: #fff;
       border-radius: 14px;
-      padding: 27px;
-      box-shadow: 0 8px 25px rgba(3,22,47,.05);
+      padding: 16px 18px;
+      border: 1px solid rgba(217,154,19,.12);
+      box-shadow: 0 8px 20px rgba(3,22,47,.05);
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      align-items: start;
     }
-    .service-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 13px; background: #fff4d9; color: #9b6500; font-size: 1.45rem; margin-bottom: 17px; }
-    .service-card h3 { color: var(--navy); margin-bottom: 8px; font-size: 1.2rem; }
-    .service-card p { color: var(--muted); margin: 0; }
+    .about-list li::before {
+      content: "✓";
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: grid; place-items: center;
+      background: rgba(217,154,19,.12);
+      color: var(--gold);
+      font-weight: 800;
+      font-size: .85rem;
+    }
+    .about-photo {
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      aspect-ratio: 4 / 5;
+      background: #dfe6f0;
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
 
-    .maintenance { background: #fff; }
-    .maintenance-layout { display: grid; grid-template-columns: 1.05fr .95fr; gap: 34px; align-items: start; }
-    .maintenance-copy h2 { color: var(--navy); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2rem,4vw,2.8rem); line-height: 1.15; margin: 8px 0 15px; }
-    .maintenance-copy > p { color: var(--muted); }
-    .benefit-list { display: grid; gap: 13px; margin-top: 25px; }
-    .benefit { display: flex; align-items: flex-start; gap: 12px; }
-    .benefit-mark { color: var(--gold); font-size: 1.25rem; font-weight: 900; }
-    .price-panel { background: var(--navy); color: white; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }
-    .price-panel-head { background: linear-gradient(100deg, #b77b06, var(--gold)); color: white; padding: 20px 25px; }
-    .price-panel-head h3 { margin: 0; font-size: 1.35rem; text-transform: uppercase; letter-spacing: .04em; }
-    .price-content { padding: 25px; }
-    .price-row { display: flex; justify-content: space-between; gap: 18px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.16); }
-    .price-row:last-of-type { border-bottom: 0; }
-    .price-row strong { text-align: right; color: #ffcf63; white-space: nowrap; }
-    .regular-price { color: #cbd4e1; font-size: .9rem; margin: -4px 0 8px; }
-    .save { color: #ffcf63; font-weight: 800; }
-    .gst-note { color: #cbd4e1; font-size: .82rem; margin-top: 15px; }
+    /* Reviews */
+    .reviews { background: #fff; }
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .review-card {
+      background: var(--mist);
+      border-radius: 18px;
+      padding: 26px;
+      border: 1px solid rgba(10,49,92,.06);
+    }
+    .stars { color: #f5b301; letter-spacing: 2px; margin-bottom: 10px; }
+    .review-card p { margin: 0 0 14px; color: var(--text); }
+    .review-card strong { display: block; color: var(--navy); }
+    .review-card small { color: var(--muted); }
 
-    .addons { background: #f2efe8; }
-    .addon-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 13px; max-width: 850px; margin: 0 auto; }
-    .addon { background: white; border: 1px solid #e7e0d2; border-radius: 11px; padding: 16px 19px; display: flex; justify-content: space-between; gap: 15px; }
-    .addon strong { color: var(--navy); white-space: nowrap; }
-    .fine-print { max-width: 850px; margin: 25px auto 0; padding: 18px 20px; border-left: 4px solid var(--gold); background: #fff; color: #596273; font-size: .9rem; }
-
-    .why { background: var(--navy); color: white; }
-    .why .section-heading h2 { color: white; }
-    .why .section-heading p { color: #cbd4e1; }
+    /* Why */
+    .why { background: linear-gradient(180deg, #07305f, var(--navy)); color: #fff; }
+    .why .section-heading h2 { color: #fff; }
+    .why .section-heading p { color: rgba(255,255,255,.82); }
     .why .section-heading .eyebrow { color: var(--gold-light); }
-    .why-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
-    .why-item { text-align: center; padding: 25px 15px; border: 1px solid rgba(242,189,61,.28); border-radius: 14px; }
-    .why-item span { display: block; color: var(--gold-light); font-size: 2rem; margin-bottom: 12px; }
-    .why-item h3 { margin: 0; font-size: 1rem; }
-
-    .contact { background: #fff; }
-    .contact-card { display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; border-radius: 20px; box-shadow: var(--shadow); }
-    .contact-info { background: var(--navy); color: white; padding: 42px; }
-    .contact-info h2 { font-family: Georgia, 'Times New Roman', serif; font-size: 2.3rem; margin-bottom: 12px; }
-    .contact-info p { color: #d6deea; }
-    .contact-detail { display: flex; gap: 14px; align-items: center; margin-top: 22px; }
-    .contact-detail .symbol { color: var(--gold-light); font-size: 1.45rem; width: 28px; text-align: center; }
-    .contact-detail small { display: block; color: #c3cedd; }
-    .contact-detail a { font-weight: 700; }
-    .contact-cta { padding: 42px; display: flex; flex-direction: column; justify-content: center; background: #fbf9f4; }
-    .contact-cta h3 { color: var(--navy); font-size: 1.6rem; margin-bottom: 10px; }
-    .contact-cta p { color: var(--muted); }
-    .contact-cta .button { align-self: flex-start; margin-top: 12px; }
-
-    footer { background: var(--navy-deep); color: #d9e0e9; padding: 25px 0; font-size: .88rem; }
-    .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-
-    @media (max-width: 850px) {
-      .nav-links { gap: 14px; font-size: .85rem; }
-      .nav-cta { padding: 10px 14px; }
-      .maintenance-layout { grid-template-columns: 1fr; }
-      .why-grid { grid-template-columns: repeat(2,1fr); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
-    @media (max-width: 680px) {
-      .container { width: min(100% - 30px, 1120px); }
-      .nav { min-height: 72px; }
-      .brand-name { font-size: 1.5rem; }
-      .brand-sub { font-size: .68rem; }
-      .brand-mark { width: 42px; height: 42px; }
-      .menu-toggle { display: block; }
+    .why-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 18px;
+      padding: 26px 22px;
+      text-align: center;
+    }
+    .why-card .icon {
+      width: 54px; height: 54px; margin: 0 auto 14px;
+      border-radius: 50%;
+      display: grid; place-items: center;
+      background: rgba(242,189,61,.18); color: var(--gold-light);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .why-card h3 { margin: 0 0 8px; font-size: 1.15rem; color: #fff; }
+    .why-card p { margin: 0; color: rgba(255,255,255,.82); font-size: .92rem; }
+
+    /* Spaces */
+    .spaces { background: var(--mist); }
+    .space-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+    .space-card {
+      background: #fff;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(10,49,92,.06);
+      transition: transform .25s ease;
+    }
+    .space-card:hover { transform: translateY(-4px); }
+    .space-card-media { aspect-ratio: 16 / 10; overflow: hidden; }
+    .space-card-media img { width: 100%; height: 100%; object-fit: cover; }
+    .space-card-body { padding: 26px; }
+    .space-card .tag {
+      display: inline-block;
+      background: rgba(217,154,19,.1);
+      color: var(--gold);
+      font-weight: 700;
+      font-size: .76rem;
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .space-card h3 { margin: 0 0 8px; color: var(--navy); font-size: 1.45rem; }
+    .space-card p { margin: 0; color: var(--muted); }
+
+    /* FAQ */
+    .faq-section { background: #fff; }
+    .faq-list { max-width: 860px; margin: 0 auto; display: grid; gap: 12px; }
+    .faq-item {
+      background: var(--navy-deep);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 22px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; color: var(--gold-light); font-size: 1.3rem; font-weight: 500; }
+    .faq-item[open] summary::after { content: "–"; }
+    .faq-item .answer {
+      padding: 0 22px 18px;
+      color: rgba(255,255,255,.88);
+      font-size: .95rem;
+    }
+
+    /* CTA banner */
+    .cta-banner {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      text-align: center;
+      padding: 90px 0;
+      background:
+        linear-gradient(100deg, rgba(10,49,92,.9), rgba(217,154,19,.75)),
+        url('images/outdoor-condenser-service.jpg') center/cover;
+    }
+    .cta-banner h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: #fff;
+    }
+    .cta-banner p { margin: 0 auto 24px; max-width: 36rem; color: rgba(255,255,255,.9); }
+    .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    /* Footer */
+    footer {
+      background: #03162f;
+      color: #d7dbe5;
+      padding: 56px 0 28px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
+      gap: 28px;
+      margin-bottom: 36px;
+    }
+    .footer-brand p { color: #aeb6c6; margin: 12px 0 0; font-size: .92rem; }
+    .footer-logo {
+      width: auto;
+      height: 48px;
+      max-width: 240px;
+      object-fit: contain;
+      display: block;
+    }
+    footer h4 {
+      margin: 0 0 14px;
+      color: #fff;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    footer ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    footer a:hover { color: var(--gold-light); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: .86rem;
+      color: #94a0b4;
+    }
+
+    /* Mobile sticky */
+    .mobile-cta {
+      display: none;
+      position: fixed;
+      left: 12px; right: 12px; bottom: 12px;
+      z-index: 90;
+      gap: 8px;
+    }
+    .mobile-cta a {
+      flex: 1;
+      text-align: center;
+      padding: 14px 10px;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: .92rem;
+      border: 1px solid #fff;
+    }
+    .mobile-cta .call { background: var(--navy-deep); color: #fff; }
+    .mobile-cta .quote { background: linear-gradient(180deg, var(--gold-light), var(--gold)); color: var(--navy-deep); }
+
+    /* Lead modal */
+    body.modal-open { overflow: hidden; }
+    .lead-modal {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(18,24,38,.62);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      pointer-events: none;
+    }
+    .lead-modal.open { display: flex; pointer-events: auto; }
+    .lead-dialog {
+      width: min(100%, 480px);
+      background: #fff;
+      border-radius: 18px;
+      padding: 28px;
+      position: relative;
+      box-shadow: 0 24px 60px rgba(0,0,0,.28);
+    }
+    .lead-close {
+      position: absolute; top: 12px; right: 12px;
+      border: 0; background: #eef1f6; width: 36px; height: 36px;
+      border-radius: 50%; cursor: pointer; font-size: 1.2rem; color: var(--navy);
+    }
+    .lead-dialog h3 { margin: 0 0 8px; color: var(--navy); }
+    .lead-dialog > p { margin: 0 0 16px; color: var(--muted); font-size: .95rem; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 980px) {
+      .booking-grid, .about-grid, .space-grid, .stats-panel, .why-grid, .review-grid, .footer-grid, .service-grid, .stats-right, .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .stats-right { grid-template-columns: repeat(2, 1fr); }
+      .nav-book { display: none; }
+    }
+    @media (max-width: 760px) {
+      .nav { min-height: 92px; padding: 8px 0; }
+      .brand-logo-img { height: 78px; max-width: min(190px, 58vw); }
+      .menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 102;
+        margin-left: auto;
+      }
       .nav-links {
         display: none;
         position: absolute;
-        top: 72px; left: 0; right: 0;
-        padding: 18px 22px 22px;
-        background: var(--navy-deep);
+        top: 100%;
+        left: 0; right: 0;
+        margin-right: 0;
+        background: #fff;
         flex-direction: column;
         align-items: stretch;
+        padding: 14px 18px 20px;
         border-bottom: 2px solid var(--gold);
+        gap: 4px;
+        box-shadow: 0 16px 30px rgba(3,22,47,.12);
+        z-index: 101;
       }
       .nav-links.open { display: flex; }
-      .nav-links a { padding: 7px 0; }
-      .nav-cta { text-align: center; }
-      .hero { padding: 70px 0 66px; }
-      .trust-inner { grid-template-columns: repeat(2,1fr); font-size: .82rem; }
-      .section { padding: 62px 0; }
-      .services-grid { grid-template-columns: 1fr; }
-      .addon-grid { grid-template-columns: 1fr; }
-      .why-grid { grid-template-columns: 1fr 1fr; }
-      .contact-card { grid-template-columns: 1fr; }
-      .contact-info, .contact-cta { padding: 30px 25px; }
-      .price-row { font-size: .92rem; }
-    }
-    @media (max-width: 390px) {
-      .brand-name { font-size: 1.3rem; }
-      .brand-sub { font-size: .61rem; }
-      .why-grid { grid-template-columns: 1fr; }
-      .price-content { padding: 19px; }
-    }
-
-    /* Waratech premium refresh */
-    .brand-logo-img { width: 230px; max-width: 34vw; height: 66px; object-fit: contain; object-position: left center; border-radius: 5px; }
-    .hero { background-image: linear-gradient(90deg, rgba(3,22,47,.97) 0%, rgba(3,22,47,.88) 43%, rgba(3,22,47,.23) 100%), url('waratech-hvac-hero.jpg'); background-size: cover; background-position: center 48%; }
-    .hero::before { content:""; position:absolute; inset:auto -4% -56px -4%; height:95px; background:var(--gold); transform:rotate(-2deg); opacity:.95; }
-    .hero::after { z-index:0; }
-    .hero-content { animation: heroEnter .85s ease both; }
-    .service-card, .price-panel, .why-item, .contact-card { transition: transform .28s ease, box-shadow .28s ease; }
-    .service-card:hover, .why-item:hover { transform: translateY(-6px); box-shadow: 0 16px 35px rgba(3,22,47,.13); }
-    .price-panel:hover, .contact-card:hover { box-shadow: 0 22px 55px rgba(3,22,47,.18); }
-    .reveal { opacity:0; transform:translateY(22px); transition:opacity .65s ease, transform .65s ease; }
-    .reveal.visible { opacity:1; transform:translateY(0); }
-    .quote-section { background:#f2efe8; }
-    .quote-wrap { display:grid; grid-template-columns:.85fr 1.15fr; gap:28px; align-items:stretch; }
-    .quote-intro { background:var(--navy); color:#fff; border-radius:18px; padding:36px; display:flex; flex-direction:column; justify-content:center; }
-    .quote-intro h2 { font:700 clamp(2rem,4vw,2.7rem)/1.12 Georgia,serif; margin:10px 0 15px; }
-    .quote-intro p { color:#d9e2ef; }
-    .quote-form { background:#fff; border-radius:18px; padding:32px; box-shadow:var(--shadow); }
-    .quote-form h3 { color:var(--navy); font:700 1.7rem Georgia,serif; margin-bottom:6px; }
-    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:15px; }
-    .field { display:flex; flex-direction:column; gap:6px; }
-    .field.full { grid-column:1/-1; }
-    .field label { font-weight:700; color:#26364c; font-size:.9rem; }
-    .field input, .field select, .field textarea { width:100%; border:1px solid #d7dce4; border-radius:9px; padding:13px 14px; font:inherit; color:var(--ink); background:#fff; outline:none; }
-    .field input:focus, .field select:focus, .field textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(217,154,19,.15); }
-    .field textarea { min-height:115px; resize:vertical; }
-    .quote-form .button { width:100%; cursor:pointer; margin-top:17px; font:700 1rem Arial,sans-serif; }
-    .quote-form .button:disabled { opacity:.72; cursor:wait; transform:none; }
-    .form-note { color:var(--muted); font-size:.8rem; margin:12px 0 0; }
-    .form-status { display:none; margin-top:14px; padding:12px 14px; border-radius:10px; font-size:.9rem; line-height:1.45; }
-    .form-status.show { display:block; }
-    .form-status.success { background:#eaf7ef; color:#14532d; border:1px solid #b7e4c7; }
-    .form-status.error { background:#fdecec; color:#7f1d1d; border:1px solid #f5c2c2; }
-    .form-status.info { background:#fff8e8; color:#7a4d00; border:1px solid #f0d59a; }
-    @keyframes heroEnter { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
-    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation:none!important; transition:none!important; } .reveal { opacity:1; transform:none; } }
-    @media(max-width:680px) { .brand-logo-img { width:190px; max-width:60vw; height:58px; } .quote-wrap { grid-template-columns:1fr; } .quote-form,.quote-intro { padding:25px; } .form-grid { grid-template-columns:1fr; } .field.full { grid-column:auto; } .hero { background-position:58% center; } }
-
-
-    /* Mobile-first refinements for phones */
-    @media (max-width: 680px) {
-      body { font-size: 15px; }
-      .topbar { padding: 7px 0; font-size: .76rem; }
-      .topbar-inner { justify-content: center; text-align: center; gap: 3px 12px; }
-      .topbar-inner span { width: 100%; }
-      .nav { min-height: 68px; gap: 10px; }
-      .brand { gap: 8px; }
-      .brand-logo-img { width: 142px !important; max-width: 52vw !important; height: 49px !important; }
-      .brand-name { font-size: 1.34rem; }
-      .brand-sub { font-size: .58rem; line-height: 1.15; }
-      .menu-toggle { display: block; min-width: 42px; min-height: 42px; }
-      .nav-links { top: 68px; padding: 14px 20px 20px; gap: 8px; }
-      .nav-links a { padding: 10px 4px; font-size: .98rem; }
-      .nav-cta { width: 100%; }
-      .hero { padding: 58px 0 52px; background-position: 61% center; }
-      .hero::before { bottom: -45px; height: 65px; }
-      .hero-content { max-width: 100%; }
-      .eyebrow { font-size: .68rem; letter-spacing: .13em; }
-      h1 { font-size: clamp(2.25rem, 10vw, 3.15rem); line-height: 1.04; margin: 13px 0; }
-      .hero p { font-size: 1rem; line-height: 1.5; max-width: 34rem; }
-      .hero-actions { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 22px; }
-      .hero-actions .button { width: 100%; min-height: 49px; }
-      .hero-tags { gap: 7px; margin-top: 22px; }
-      .hero-tags span { font-size: .76rem; padding: 5px 10px; }
-      .trust-inner { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0; padding: 8px 0; }
-      .trust-inner span { padding: 9px 4px; font-size: .82rem; }
-      .section { padding: 48px 0; }
-      .section-heading { margin-bottom: 25px; }
-      .section-heading h2 { font-size: 2rem; line-height: 1.13; }
-      .section-heading p { font-size: .94rem; }
-      .services-grid { grid-template-columns: 1fr; gap: 12px; }
-      .service-card { padding: 20px; display: grid; grid-template-columns: 48px 1fr; column-gap: 13px; align-items: center; }
-      .service-icon { grid-row: span 2; margin: 0; }
-      .service-card h3 { margin: 0 0 3px; font-size: 1.08rem; }
-      .service-card p { font-size: .9rem; }
-      .maintenance-layout { gap: 22px; }
-      .maintenance-copy h2 { font-size: 2rem; }
-      .maintenance-copy > p { font-size: .95rem; }
-      .benefit-list { gap: 11px; margin-top: 18px; }
-      .price-panel { border-radius: 14px; }
-      .price-panel-head { padding: 15px 18px; }
-      .price-panel-head h3 { font-size: 1.12rem; }
-      .price-content { padding: 17px; }
-      .price-row { align-items: flex-start; gap: 10px; font-size: .9rem; padding: 12px 0; }
-      .price-row strong { font-size: .88rem; }
-      .regular-price { font-size: .82rem; }
-      .gst-note { font-size: .78rem; }
-      .addon-grid { grid-template-columns: 1fr; gap: 9px; }
-      .addon { padding: 13px 14px; align-items: center; font-size: .9rem; }
-      .addon strong { font-size: .9rem; }
-      .fine-print { margin-top: 17px; padding: 14px; font-size: .82rem; }
-      .why-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
-      .why-item { padding: 18px 10px; }
-      .why-item span { font-size: 1.7rem; margin-bottom: 6px; }
-      .why-item h3 { font-size: .88rem; line-height: 1.3; }
-      .quote-wrap { grid-template-columns: 1fr !important; gap: 14px !important; }
-      .quote-intro { padding: 24px !important; border-radius: 15px; }
-      .quote-intro h2 { font-size: 2rem !important; }
-      .quote-intro p { font-size: .92rem; }
-      .quote-form { padding: 21px !important; border-radius: 15px; }
-      .quote-form h3 { font-size: 1.45rem; }
-      .form-grid { grid-template-columns: 1fr !important; gap: 12px; }
-      .field.full { grid-column: auto !important; }
-      .field input, .field select, .field textarea { min-height: 46px; font-size: 16px; }
-      .field textarea { min-height: 110px; }
-      .quote-form .button { width: 100%; min-height: 49px; }
-      .form-note { font-size: .76rem; }
-      .contact-card { grid-template-columns: 1fr; border-radius: 15px; }
-      .contact-info, .contact-cta { padding: 25px 21px; }
-      .contact-info h2 { font-size: 2rem; }
-      .contact-detail { margin-top: 17px; }
-      .contact-detail a { overflow-wrap: anywhere; }
-      .contact-cta .button { width: 100%; align-self: stretch; }
-      footer { padding: 21px 0; font-size: .78rem; text-align: center; }
-      .footer-inner { justify-content: center; gap: 8px; }
-    }
-    @media (max-width: 380px) {
-      .brand-logo-img { width: 125px !important; }
-      .brand-name { font-size: 1.2rem; }
-      .brand-sub { font-size: .52rem; }
-      .price-row { font-size: .82rem; }
-      .price-row strong { font-size: .82rem; }
-      .addon { font-size: .84rem; }
+      .nav-links a { display: block; width: 100%; padding: 14px 12px; }
+      .hero { min-height: auto; padding: 48px 0 90px; }
+      .hero-actions { display: grid; }
+      .hero-actions .button { width: 100%; }
+      .section { padding: 56px 0; }
+      .mobile-cta { display: flex; }
+      footer { padding-bottom: 100px; }
+      .quote-bar-inner { justify-content: center; text-align: center; }
+      .about-photo { aspect-ratio: 16 / 11; }
+      .field input, .field select, .field textarea { font-size: 16px; min-height: 46px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+      .hero-slide { transform: none; }
     }
-
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <span>Air Conditioning–Refrigeration Service</span>
-      <span><a href="tel:+61433868646">+61 433 868 646</a> &nbsp;|&nbsp; <a href="mailto:waratechair@gmail.com">waratechair@gmail.com</a></span>
+  <div class="quote-bar">
+    <div class="container quote-bar-inner">
+      <h3>Delivering professional air quality solutions across Sydney</h3>
+      <a href="tel:+61433868646">Call +61 433 868 646</a>
     </div>
   </div>
 
   <header>
     <div class="container nav">
-      <a class="brand" href="#home" aria-label="Waratech home">
-        <img class="brand-logo-img" src="waratech-logo.jpg" alt="Waratech Air Conditioning-Refrigeration Service logo" width="230" height="66" decoding="async">
+      <a class="brand" href="index.html" aria-label="Waratech home">
+        <img class="brand-logo-img" src="waratech-logo-header.png" alt="Waratech Air Conditioning-Refrigeration Service" width="207" height="96" decoding="async">
       </a>
-      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleMenu()">☰</button>
-      <nav class="nav-links" id="navLinks">
-        <a href="#home" onclick="closeMenu()">Home</a>
-        <a href="#services" onclick="closeMenu()">Services</a>
-        <a href="#maintenance" onclick="closeMenu()">Pricing</a>
-        <a href="#quote" onclick="closeMenu()">Get a Quote</a>
-        <a href="#why-us" onclick="closeMenu()">Why Service?</a>
-        <a href="#contact" class="nav-cta" onclick="closeMenu()">Contact Us</a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">☰</button>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="#home" class="active" data-nav>Home</a>
+        <a href="#about" data-nav>About Us</a>
+        <a href="services.html" data-nav>Services</a>
+        <a href="#faqs" data-nav>FAQ's</a>
+        <a href="#contact" data-nav>Contact</a>
       </nav>
+      <a class="nav-book" href="#contact">Get a free quote</a>
     </div>
   </header>
 
   <main>
     <section class="hero" id="home">
+      <div class="hero-slides" aria-hidden="true">
+        <div class="hero-slide is-active" style="background-image:url('images/home-1-cassette-ocean.png')"></div>
+        <div class="hero-slide" style="background-image:url('images/home-2-technician-service.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/home-3-linear-diffusers.png')"></div>
+      </div>
+      <div class="hero-overlay"></div>
       <div class="container hero-content">
-        <div class="eyebrow">Residential • Commercial • Sydney</div>
-        <h1>Comfort you can count on. Service you can trust.</h1>
-        <p>Waratech provides air conditioning and refrigeration services, including residential and commercial solutions, installation, sales and preventative maintenance.</p>
+        <h1>Healthier air. Reliable comfort.</h1>
+        <p>Waratech cleans, services and installs air conditioning systems so Sydney homes and workplaces breathe better, feel cooler and run more efficiently.</p>
+        <ul class="hero-proof">
+          <li>Sydney based local team</li>
+          <li>Residential &amp; commercial</li>
+          <li>All major brands serviced</li>
+        </ul>
         <div class="hero-actions">
-          <a class="button" href="#quote">Request a Quote</a>
-          <a class="button button-outline" href="tel:+61433868646">Call +61 433 868 646</a>
+          <a class="button" href="#contact">Get a free quote</a>
+          <a class="button button-navy" href="tel:+61433868646">Call +61 433 868 646</a>
         </div>
-        <div class="hero-tags">
-          <span>Residential</span><span>Commercial</span><span>Service</span><span>Installation</span><span>Sales</span>
-        </div>
+      </div>
+      <div class="hero-dots" role="tablist" aria-label="Home image slides">
+        <button class="hero-dot is-active" type="button" aria-label="Show image 1" data-slide="0"></button>
+        <button class="hero-dot" type="button" aria-label="Show image 2" data-slide="1"></button>
+        <button class="hero-dot" type="button" aria-label="Show image 3" data-slide="2"></button>
       </div>
     </section>
 
-    <div class="trust-strip">
-      <div class="container trust-inner">
-        <span>Residential Service</span><span>Commercial Service</span><span>Installation</span><span>Sales</span>
+    <div class="stats-strip">
+      <div class="container">
+        <div class="stats-panel reveal">
+          <div class="stats-left">
+            <strong>Sydney based</strong>
+            <span>Professional air quality solutions</span>
+          </div>
+          <div class="stats-right">
+            <div class="stat-step"><div class="num">1</div>Share your details</div>
+            <div class="stat-step"><div class="num">2</div>Get a quote</div>
+            <div class="stat-step"><div class="num">3</div>We confirm timing</div>
+            <div class="stat-step"><div class="num">4</div>Service visit</div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <section class="section" id="services">
+    <section class="section booking" id="contact">
+      <div class="container booking-grid">
+        <div class="booking-copy reveal">
+          <h2>Request a free quote</h2>
+          <p>Tell us what you need and we’ll follow up to discuss the right service for your Sydney space.</p>
+          <ul>
+            <li>Experienced technicians</li>
+            <li>Clear recommendations and quotes</li>
+            <li>Residential and commercial solutions</li>
+            <li>Service, repair, maintenance &amp; installation</li>
+          </ul>
+        </div>
+        <div class="booking-form reveal">
+          <h3>Get a free quote</h3>
+          <p>Tell us what you need and we’ll follow up promptly.</p>
+          <form id="quoteForm" novalidate>
+            <div class="form-grid">
+              <div class="field"><label for="qname">Name *</label><input id="qname" name="name" autocomplete="name" required placeholder="Your name"></div>
+              <div class="field"><label for="qphone">Phone number *</label><input id="qphone" name="phone" type="tel" autocomplete="tel" required placeholder="Your contact number"></div>
+              <div class="field full"><label for="qemail">Email *</label><input id="qemail" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+              <div class="field"><label for="qservice">Service needed *</label>
+                <select id="qservice" name="service" required>
+                  <option value="">Select service</option>
+                  <option>Air conditioning services</option>
+                  <option>Air conditioning repairs</option>
+                  <option>Air conditioning maintenance</option>
+                  <option>Air conditioning installation</option>
+                  <option>Residential</option>
+                  <option>Commercial</option>
+                  <option>Other / not sure</option>
+                </select>
+              </div>
+              <div class="field"><label for="qaddress">Sydney suburb / service location *</label><input id="qaddress" name="location" required placeholder="e.g. Parramatta, Bondi, Chatswood"></div>
+              <div class="field full"><label for="qmessage">Message / additional details</label><textarea id="qmessage" name="message" placeholder="Message / additional details"></textarea></div>
+            </div>
+            <button class="button" style="width:100%;margin-top:16px;" type="submit" id="quoteSubmit">Send enquiry</button>
+            <div class="form-status" id="quoteStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services-home" id="services">
       <div class="container">
         <div class="section-heading">
-          <div class="eyebrow">What we do</div>
-          <h2>Air conditioning solutions</h2>
-          <p>From everyday home comfort to commercial air conditioning needs, get in touch with Waratech to discuss your requirements.</p>
+          <div class="eyebrow">Services</div>
+          <h2>Complete air conditioning solutions</h2>
+          <p>Choose the service you need — or open the full Services page for more detail.</p>
         </div>
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="service-icon">⌂</div>
-            <h3>Residential</h3>
-            <p>Air conditioning services for apartments, units and homes.</p>
+        <div class="service-grid">
+          <a class="service-tile reveal" href="services.html#explore" style="background-image:url('images/service-services-deepclean.jpg')">
+            <div class="body">
+              <div class="num">01</div>
+              <h3>Air Conditioning Services</h3>
+              <p>Complete care to keep your system clean, reliable and performing well.</p>
+              <span class="learn-more">Learn More →</span>
+            </div>
+          </a>
+          <a class="service-tile reveal" href="services.html#explore" style="background-image:url('images/service-repairs-technician.jpg')">
+            <div class="body">
+              <div class="num">02</div>
+              <h3>Air Conditioning Repairs</h3>
+              <p>Reliable repairs to help restore your system’s performance.</p>
+              <span class="learn-more">Learn More →</span>
+            </div>
+          </a>
+          <a class="service-tile reveal" href="services.html#explore" style="background-image:url('images/service-maintenance-clean.png')">
+            <div class="body">
+              <div class="num">03</div>
+              <h3>Air Conditioning Maintenance</h3>
+              <p>Regular maintenance for efficient operation and year-round comfort.</p>
+              <span class="learn-more">Learn More →</span>
+            </div>
+          </a>
+          <a class="service-tile reveal" href="services.html#explore" style="background-image:url('images/service-installation-bedroom.png')">
+            <div class="body">
+              <div class="num">04</div>
+              <h3>Air Conditioning Installation</h3>
+              <p>Professional installation tailored to your home or business.</p>
+              <span class="learn-more">Learn More →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="about-copy reveal">
+          <div class="eyebrow" style="color:var(--gold);text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:700;">About Us</div>
+          <h2>Professional air quality solutions for Sydney.</h2>
+          <p>Waratech is a Sydney air conditioning and refrigeration service focused on healthier indoor air, reliable comfort and dependable system care.</p>
+          <ul class="about-list">
+            <li>Experienced technicians who inspect first and explain what they find.</li>
+            <li>Quality workmanship for residential and commercial systems.</li>
+            <li>Clear recommendations — service, repair, maintain or install.</li>
+            <li>Local coverage across Greater Sydney suburbs.</li>
+          </ul>
+        </div>
+        <div class="about-photo reveal">
+          <img src="images/home-comfort-living.jpg" alt="Modern living space with professional air conditioning" width="720" height="900" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <section class="section reviews" id="reviews">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Customer reviews</div>
+          <h2>The kind of experience we aim to deliver</h2>
+          <p>Replace these with your real Google reviews before launch.</p>
+        </div>
+        <div class="review-grid">
+          <article class="review-card reveal">
+            <div class="stars">★★★★★</div>
+            <p>“Professional, on time and explained everything clearly. Our unit is cooling better after the service.”</p>
+            <strong>Residential customer</strong>
+            <small>Inner West, Sydney</small>
           </article>
-          <article class="service-card">
-            <div class="service-icon">▦</div>
-            <h3>Commercial</h3>
-            <p>Air conditioning and refrigeration service solutions for commercial spaces.</p>
+          <article class="review-card reveal">
+            <div class="stars">★★★★★</div>
+            <p>“Great communication and neat workmanship. Ideal for our office air conditioning maintenance.”</p>
+            <strong>Commercial client</strong>
+            <small>Sydney CBD</small>
           </article>
-          <article class="service-card">
-            <div class="service-icon">❄</div>
-            <h3>Service & Maintenance</h3>
-            <p>Preventative maintenance, cleaning and servicing to help keep your system operating efficiently.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">⚙</div>
-            <h3>Installation</h3>
-            <p>Air conditioning installation services. Contact us to discuss your system and requirements.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">▣</div>
-            <h3>Sales</h3>
-            <p>Air conditioning and refrigeration sales enquiries.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">✚</div>
-            <h3>Refrigeration</h3>
-            <p>Refrigeration service enquiries for residential and commercial customers.</p>
+          <article class="review-card reveal">
+            <div class="stars">★★★★★</div>
+            <p>“From quote to installation, the process was simple and the team were reliable throughout.”</p>
+            <strong>Homeowner</strong>
+            <small>North Shore</small>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section maintenance" id="maintenance">
-      <div class="container maintenance-layout">
-        <div class="maintenance-copy">
-          <div class="eyebrow">Keep your system running well</div>
-          <h2>Preventative maintenance, clean & service</h2>
-          <p>Take advantage of our exclusive bulk discount on air conditioning preventative maintenance. Regular servicing enhances system efficiency and can lead to significant savings on your electricity bill.</p>
-          <div class="benefit-list">
-            <div class="benefit"><span class="benefit-mark">➜</span><span>Help extend the life of your air conditioner.</span></div>
-            <div class="benefit"><span class="benefit-mark">➜</span><span>Help prevent system blockages.</span></div>
-            <div class="benefit"><span class="benefit-mark">➜</span><span>Support efficient operation and lower energy bills.</span></div>
-            <div class="benefit"><span class="benefit-mark">➜</span><span>Save money with scheduled maintenance and bulk pricing.</span></div>
-          </div>
-        </div>
-        <aside class="price-panel" aria-label="Preventative maintenance pricing">
-          <div class="price-panel-head"><h3>Preventative maintenance pricing</h3></div>
-          <div class="price-content">
-            <div class="price-row"><span>Single system (apartment/unit)</span><strong>$135.00</strong></div>
-            <p class="regular-price">Regular price: $185.00 &nbsp; <span class="save">Save $50!</span></p>
-            <div class="price-row"><span>Additional systems (same apartment/unit)</span><strong>$100.00 each</strong></div>
-            <div class="price-row"><span>Bulk additional units</span><strong>$70.00 per unit</strong></div>
-            <p class="gst-note">All prices include GST. Special pricing applies only on scheduled service days.</p>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section addons">
+    <section class="section why" id="why">
       <div class="container">
         <div class="section-heading">
-          <div class="eyebrow">Optional extras</div>
-          <h2>Add-on services</h2>
-          <p>Enhance your preventative maintenance service with the following optional treatments.</p>
-        </div>
-        <div class="addon-grid">
-          <div class="addon"><span>Anti-bacterial treatment</span><strong>$30.00</strong></div>
-          <div class="addon"><span>Rust prevention treatment</span><strong>$30.00</strong></div>
-          <div class="addon"><span>Coil coat protection</span><strong>$40.00</strong></div>
-          <div class="addon"><span>Treatment package deal</span><strong>$90.00</strong></div>
-          <div class="addon"><span>Exhaust fan maintenance (each unit)</span><strong>$25.00</strong></div>
-        </div>
-        <div class="fine-print">
-          <strong>Please note:</strong> Parts, refrigerants and labour required for fault diagnosis incur additional costs. All add-on prices include GST. Special pricing applies only on scheduled service days.
-        </div>
-      </div>
-    </section>
-
-    <section class="section why" id="why-us">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow">The value of regular servicing</div>
-          <h2>Why service your A/C?</h2>
-          <p>Regular preventative maintenance helps keep your air conditioning system in better condition.</p>
+          <div class="eyebrow">Why choose us?</div>
+          <h2>Better air starts with better care</h2>
+          <p>Reliable service, quality workmanship and clear communication from first contact to finished job.</p>
         </div>
         <div class="why-grid">
-          <div class="why-item"><span>⌛</span><h3>Extend the life of your air conditioner</h3></div>
-          <div class="why-item"><span>✧</span><h3>Help prevent system blockages</h3></div>
-          <div class="why-item"><span>↓</span><h3>Lower energy bills</h3></div>
-          <div class="why-item"><span>$</span><h3>Save money</h3></div>
+          <article class="why-card reveal">
+            <div class="icon">01</div>
+            <h3>Expert technicians</h3>
+            <p>Trained technicians who inspect first, explain findings and recommend the right service.</p>
+          </article>
+          <article class="why-card reveal">
+            <div class="icon">02</div>
+            <h3>Reliable &amp; fast service</h3>
+            <p>Quick responses, easy booking and clear confirmation before your visit.</p>
+          </article>
+          <article class="why-card reveal">
+            <div class="icon">03</div>
+            <h3>Quality brands</h3>
+            <p>We service leading air conditioning brands used across Sydney homes and workplaces.</p>
+          </article>
+          <article class="why-card reveal">
+            <div class="icon">04</div>
+            <h3>Residential &amp; commercial</h3>
+            <p>Practical solutions for apartments, family homes, offices and workplaces.</p>
+          </article>
+          <article class="why-card reveal">
+            <div class="icon">05</div>
+            <h3>Healthier indoor air</h3>
+            <p>Cleaner systems help support fresher comfort and better day-to-day air quality.</p>
+          </article>
+          <article class="why-card reveal">
+            <div class="icon">06</div>
+            <h3>Clear quotes</h3>
+            <p>Straightforward recommendations and quotes with no unnecessary complexity.</p>
+          </article>
         </div>
       </div>
     </section>
 
-
-    <section class="section quote-section" id="quote">
-      <div class="container quote-wrap">
-        <div class="quote-intro reveal">
-          <div class="eyebrow">Let's get started</div>
-          <h2>Request a service quote</h2>
-          <p>Tell us a little about your air conditioning or refrigeration needs. Our team can follow up to discuss the service and scheduling.</p>
-          <div class="benefit-list">
-            <div class="benefit"><span class="benefit-mark">➜</span><span>Residential and commercial enquiries</span></div>
-            <div class="benefit"><span class="benefit-mark">➜</span><span>Preventative maintenance and cleaning</span></div>
-            <div class="benefit"><span class="benefit-mark">➜</span><span>Installation, service and sales</span></div>
-          </div>
-          <p><strong>Prefer to speak with us?</strong><br><a href="tel:+61433868646" style="color:#ffcf63;font-weight:800;">+61 433 868 646</a></p>
-        </div>
-        <form class="quote-form reveal" id="quoteForm">
-          <h3>Get a free quote</h3>
-          <p style="color:var(--muted);margin-top:0;">Complete the form and we will email your enquiry straight to Waratech.</p>
-          <div class="form-grid">
-            <div class="field"><label for="qname">Full name *</label><input id="qname" name="name" autocomplete="name" required placeholder="Your name"></div>
-            <div class="field"><label for="qphone">Phone number *</label><input id="qphone" name="phone" type="tel" autocomplete="tel" required placeholder="Your contact number"></div>
-            <div class="field"><label for="qemail">Email address *</label><input id="qemail" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
-            <div class="field"><label for="qservice">Service required *</label><select id="qservice" name="service" required><option value="">Select a service</option><option>Residential air conditioning</option><option>Commercial air conditioning</option><option>Preventative maintenance clean & service</option><option>Installation</option><option>Repairs / fault diagnosis</option><option>Refrigeration</option><option>Sales enquiry</option><option>Other</option></select></div>
-            <div class="field full"><label for="qaddress">Suburb / service location</label><input id="qaddress" name="location" placeholder="Your suburb in Sydney"></div>
-            <div class="field full"><label for="qmessage">Message / additional details</label><textarea id="qmessage" name="message" placeholder="Tell us about your system, number of units or preferred service date..."></textarea></div>
-          </div>
-          <button class="button" type="submit" id="quoteSubmit">Send quote request</button>
-          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
-          <p class="form-note">* Required fields. Your enquiry is sent by email to Waratech. We aim to respond as soon as possible.</p>
-        </form>
-      </div>
-    </section>
-
-    <section class="section contact" id="contact">
+    <section class="section spaces" id="spaces">
       <div class="container">
-        <div class="contact-card">
-          <div class="contact-info">
-            <div class="eyebrow">Get in touch</div>
-            <h2>Let's talk about your A/C needs.</h2>
-            <p>Contact Waratech for air conditioning and refrigeration service enquiries in Sydney.</p>
-            <div class="contact-detail"><span class="symbol">☎</span><div><small>Call us</small><a href="tel:+61433868646">+61 433 868 646</a></div></div>
-            <div class="contact-detail"><span class="symbol">✉</span><div><small>Email us</small><a href="mailto:waratechair@gmail.com">waratechair@gmail.com</a></div></div>
-            <div class="contact-detail"><span class="symbol">⌖</span><div><small>Service location</small><strong>Sydney, Australia</strong></div></div>
-          </div>
-          <div class="contact-cta">
-            <h3>Schedule your maintenance</h3>
-            <p>Residents are required to call the office to schedule a time. Call us to discuss availability and arrange a service day.</p>
-            <a class="button" href="tel:+61433868646">Call to schedule</a>
-            <p style="font-size:.86rem;margin-top:20px;">Prefer email? <a href="mailto:waratechair@gmail.com" style="color:#946000;font-weight:700;">Send us an enquiry</a>.</p>
-          </div>
+        <div class="section-heading">
+          <div class="eyebrow">Who we help</div>
+          <h2>Residential &amp; commercial solutions</h2>
+          <p>Practical air conditioning care designed for the spaces Sydney people live and work in.</p>
+        </div>
+        <div class="space-grid">
+          <article class="space-card reveal">
+            <div class="space-card-media">
+              <img src="images/residential-living.jpg" alt="Residential living room with split-system air conditioning" width="800" height="500" loading="lazy" decoding="async">
+            </div>
+            <div class="space-card-body">
+              <span class="tag">Residential</span>
+              <h3>Residential</h3>
+              <p>Comfortable, reliable air conditioning solutions for homes, apartments and residential properties.</p>
+            </div>
+          </article>
+          <article class="space-card reveal">
+            <div class="space-card-media">
+              <img src="images/commercial-office.jpg" alt="Commercial office HVAC installation" width="800" height="500" loading="lazy" decoding="async">
+            </div>
+            <div class="space-card-body">
+              <span class="tag">Commercial</span>
+              <h3>Commercial</h3>
+              <p>Dependable air conditioning solutions for offices, workplaces and commercial environments.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faqs">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">FAQ</div>
+          <h2>Quick answers about Waratech services</h2>
+          <p>Quick answers about Waratech services and booking across Sydney.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item reveal" open>
+            <summary>What services does Waratech provide?</summary>
+            <div class="answer">We provide air conditioning services, repairs, maintenance and installation for residential and commercial customers across Greater Sydney.</div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Do you service all major brands?</summary>
+            <div class="answer">Yes. We service a wide range of popular air conditioning brands used in Sydney homes and businesses.</div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>How do I book a service?</summary>
+            <div class="answer">Use the booking form on this page, call +61 433 868 646, or email waratechair@gmail.com and we’ll confirm your appointment.</div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Do you cover my suburb?</summary>
+            <div class="answer">We service Greater Sydney including CBD, Inner West, Eastern Suburbs, North Shore, Northern Beaches, Western Sydney and surrounding areas. Share your suburb when you enquire.</div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Is GST included in quotes?</summary>
+            <div class="answer">Quotes can be provided with GST clarity on request. Ask us when you book and we’ll confirm pricing details before work begins.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="container">
+        <h2>Ready for healthier air and reliable comfort?</h2>
+        <p>Ready for healthier air and reliable comfort? with Waratech and enjoy cleaner, more reliable comfort at home or work.</p>
+        <div class="cta-actions">
+          <a class="button" href="#contact">Get a free quote</a>
+          <a class="button button-outline" href="tel:+61433868646">Call +61 433 868 646</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> Waratech Air Conditioning-Refrigeration Service</span>
-      <span>Residential • Commercial • Service • Installation • Sales</span>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img class="footer-logo" src="waratech-logo-on-dark.png" alt="Waratech logo" width="220" height="48" decoding="async">
+          <p>Professional air conditioning and refrigeration solutions across Greater Sydney.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#spaces">Spaces</a></li>
+            <li><a href="#faqs">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#contact">Get a free quote</a></li>
+            <li><a href="mailto:waratechair@gmail.com">waratechair@gmail.com</a></li>
+            <li><a href="tel:+61433868646">+61 433 868 646</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Service area</h4>
+          <ul>
+            <li>Sydney CBD &amp; Inner West</li>
+            <li>Eastern Suburbs &amp; North Shore</li>
+            <li>Northern Beaches &amp; Hills</li>
+            <li>Western Sydney &amp; surrounds</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Copyright Waratech © 2026. All Rights Reserved.</span>
+        <span>Delivering professional air quality solutions across Sydney.</span>
+      </div>
     </div>
   </footer>
 
+  <div class="mobile-cta" aria-label="Quick actions">
+    <a class="call" href="tel:+61433868646">Call now</a>
+    <a class="quote" href="#contact">Quote</a>
+  </div>
+
+  <div class="lead-modal" id="leadModal" hidden>
+    <div class="lead-dialog" role="dialog" aria-modal="true" aria-labelledby="leadTitle">
+      <button class="lead-close" type="button" id="leadClose" aria-label="Close">×</button>
+      <h3 id="leadTitle">Request a free quote</h3>
+      <p>Share a few details and Waratech will get back to you about the right service for your Sydney space.</p>
+      <form id="popupForm" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="pname">Name *</label><input id="pname" name="name" autocomplete="name" required placeholder="Your name"></div>
+          <div class="field"><label for="pphone">Phone number *</label><input id="pphone" name="phone" type="tel" autocomplete="tel" required placeholder="Your contact number"></div>
+          <div class="field full"><label for="pemail">Email *</label><input id="pemail" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+          <div class="field full"><label for="pservice">Service needed *</label>
+            <select id="pservice" name="service" required>
+              <option value="">Select service</option>
+              <option>Air conditioning services</option>
+              <option>Air conditioning repairs</option>
+              <option>Air conditioning maintenance</option>
+              <option>Air conditioning installation</option>
+              <option>Other / not sure</option>
+            </select>
+          </div>
+          <div class="field full"><label for="plocation">Suburb *</label><input id="plocation" name="location" required placeholder="Your suburb"></div>
+          <div class="field full"><label for="pmessage">Message / additional details</label><textarea id="pmessage" name="message" placeholder="Message / additional details"></textarea></div>
+        </div>
+        <button class="button" style="width:100%;margin-top:14px;" type="submit" id="popupSubmit">Send enquiry</button>
+        <div class="form-status" id="popupStatus" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
   <script>
-    /**
-     * EmailJS setup (required before the form can send):
-     * 1. Create an account at https://www.emailjs.com/
-     * 2. Add an Email Service connected to waratechair@gmail.com
-     * 3. Create a template with these variables:
-     *    {{name}} {{phone}} {{email}} {{service}} {{location}} {{message}} {{title}}
-     *    Suggested subject: Waratech website quote enquiry - {{service}}
-     *    Suggested Reply-To: {{email}}
-     * 4. Paste your Public Key, Service ID and Template ID below.
-     */
     const EMAILJS_CONFIG = {
       publicKey: 'YOUR_PUBLIC_KEY',
       serviceId: 'YOUR_SERVICE_ID',
@@ -597,21 +1179,49 @@
       toEmail: 'waratechair@gmail.com'
     };
 
+    const navLinks = document.getElementById('navLinks');
+    const menuToggle = document.getElementById('menuToggle');
+
     function toggleMenu() {
-      const links = document.getElementById('navLinks');
-      const button = document.querySelector('.menu-toggle');
-      const isOpen = links.classList.toggle('open');
-      button.setAttribute('aria-expanded', String(isOpen));
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
     }
     function closeMenu() {
-      document.getElementById('navLinks').classList.remove('open');
-      document.querySelector('.menu-toggle').setAttribute('aria-expanded', 'false');
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+    function setActiveNav(link) {
+      navLinks.querySelectorAll('a[data-nav]').forEach(function (el) {
+        el.classList.toggle('active', el === link);
+      });
     }
 
-    function setFormStatus(type, message) {
-      const status = document.getElementById('formStatus');
-      status.className = 'form-status show ' + type;
-      status.textContent = message;
+    menuToggle.addEventListener('click', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      toggleMenu();
+    });
+
+    navLinks.querySelectorAll('a[data-nav]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        setActiveNav(link);
+        closeMenu();
+      });
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!navLinks.classList.contains('open')) return;
+      if (navLinks.contains(event.target) || menuToggle.contains(event.target)) return;
+      closeMenu();
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeMenu();
+    });
+
+    function setStatus(el, type, message) {
+      el.className = 'form-status show ' + type;
+      el.textContent = message;
     }
 
     function emailJsConfigured() {
@@ -620,61 +1230,57 @@
         && EMAILJS_CONFIG.templateId !== 'YOUR_TEMPLATE_ID';
     }
 
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    if (window.emailjs && emailJsConfigured()) {
-      emailjs.init({ publicKey: EMAILJS_CONFIG.publicKey });
-    }
-
-    document.getElementById('quoteForm').addEventListener('submit', function (event) {
-      event.preventDefault();
-      const form = this;
-      const submitBtn = document.getElementById('quoteSubmit');
-
+    function sendEnquiry(form, submitBtn, statusEl) {
       if (!form.reportValidity()) {
-        setFormStatus('error', 'Please complete the required fields before sending.');
+        setStatus(statusEl, 'error', 'Please complete the required fields before sending.');
         return;
       }
-
       if (!window.emailjs) {
-        setFormStatus('error', 'Email service could not load. Please call +61 433 868 646 or email waratechair@gmail.com.');
+        setStatus(statusEl, 'error', 'Email service could not load. Please call +61 433 868 646 or email waratechair@gmail.com.');
         return;
       }
-
       if (!emailJsConfigured()) {
-        setFormStatus('info', 'Email delivery is not configured yet. Please call +61 433 868 646 or email waratechair@gmail.com.');
+        setStatus(statusEl, 'info', 'Email delivery is not configured yet. Please call +61 433 868 646 or email waratechair@gmail.com.');
         return;
       }
 
       const originalLabel = submitBtn.textContent;
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending...';
-      setFormStatus('info', 'Sending your quote request...');
+      setStatus(statusEl, 'info', 'Sending your enquiry...');
 
-      const templateParams = {
+      emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, {
         name: form.name.value.trim(),
         phone: form.phone.value.trim(),
         email: form.email.value.trim(),
         service: form.service.value,
         location: form.location.value.trim() || 'Not provided',
         message: form.message.value.trim() || 'Not provided',
-        title: 'Waratech website quote enquiry - ' + form.service.value,
+        title: 'Waratech website enquiry - ' + form.service.value,
         to_email: EMAILJS_CONFIG.toEmail
-      };
+      }).then(function () {
+        setStatus(statusEl, 'success', 'Thanks — your enquiry has been sent. Waratech will be in touch soon.');
+        form.reset();
+      }).catch(function (error) {
+        console.error('EmailJS error:', error);
+        setStatus(statusEl, 'error', 'Sorry, we could not send your request right now. Please call +61 433 868 646 or email waratechair@gmail.com.');
+      }).finally(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      });
+    }
 
-      emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, templateParams)
-        .then(function () {
-          setFormStatus('success', 'Thanks — your quote request has been sent. Waratech will be in touch soon.');
-          form.reset();
-        })
-        .catch(function (error) {
-          console.error('EmailJS error:', error);
-          setFormStatus('error', 'Sorry, we could not send your request right now. Please call +61 433 868 646 or email waratechair@gmail.com.');
-        })
-        .finally(function () {
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalLabel;
-        });
+    if (window.emailjs && emailJsConfigured()) {
+      emailjs.init({ publicKey: EMAILJS_CONFIG.publicKey });
+    }
+
+    document.getElementById('quoteForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      sendEnquiry(this, document.getElementById('quoteSubmit'), document.getElementById('quoteStatus'));
+    });
+    document.getElementById('popupForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      sendEnquiry(this, document.getElementById('popupSubmit'), document.getElementById('popupStatus'));
     });
 
     const revealObserver = new IntersectionObserver((entries) => {
@@ -685,10 +1291,68 @@
         }
       });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.service-card, .maintenance-copy, .price-panel, .addon, .why-item, .contact-card, .quote-intro, .quote-form').forEach(el => {
-      el.classList.add('reveal');
-      revealObserver.observe(el);
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    const leadModal = document.getElementById('leadModal');
+    const leadClose = document.getElementById('leadClose');
+    let leadShown = sessionStorage.getItem('waratechLeadShown') === '1';
+    let scrollTicks = 0;
+
+    function openLeadModal() {
+      if (leadShown) return;
+      leadShown = true;
+      sessionStorage.setItem('waratechLeadShown', '1');
+      closeMenu();
+      leadModal.hidden = false;
+      leadModal.classList.add('open');
+      document.body.classList.add('modal-open');
+    }
+    function closeLeadModal() {
+      leadModal.classList.remove('open');
+      leadModal.hidden = true;
+      document.body.classList.remove('modal-open');
+    }
+    leadClose.addEventListener('click', closeLeadModal);
+    leadModal.addEventListener('click', function (event) {
+      if (event.target === leadModal) closeLeadModal();
     });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && leadModal.classList.contains('open')) closeLeadModal();
+    });
+    window.addEventListener('scroll', function () {
+      if (leadShown) return;
+      scrollTicks += 1;
+      if (window.scrollY > 480 && scrollTicks > 8) openLeadModal();
+    }, { passive: true });
+
+    (function initHeroSlideshow() {
+      const slides = Array.from(document.querySelectorAll('.hero-slide'));
+      const dots = Array.from(document.querySelectorAll('.hero-dot'));
+      if (slides.length < 2) return;
+      let index = 0;
+      let timer = null;
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function showSlide(next) {
+        index = (next + slides.length) % slides.length;
+        slides.forEach((slide, i) => slide.classList.toggle('is-active', i === index));
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('is-active', i === index);
+          dot.setAttribute('aria-selected', i === index ? 'true' : 'false');
+        });
+      }
+      function startTimer() {
+        if (reduceMotion) return;
+        clearInterval(timer);
+        timer = setInterval(function () { showSlide(index + 1); }, 5200);
+      }
+      dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          showSlide(Number(dot.getAttribute('data-slide')) || 0);
+          startTimer();
+        });
+      });
+      startTimer();
+    })();
   </script>
 </body>
 </html>
