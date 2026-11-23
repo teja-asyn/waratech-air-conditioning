@@ -30,8 +30,12 @@
       --navy-deep: #03162f;
       --navy: #0a315c;
       --navy-soft: #07305f;
-      --gold: #d99a13;
-      --gold-light: #f2bd3d;
+      --black: #073B78;
+      --ink: #062f61;
+      --blue-glass: rgba(7, 59, 120, 0.72);
+      --blue-glass-strong: rgba(7, 59, 120, 0.88);
+      --gold: #d4a017;
+      --gold-light: #f0c040;
       --text: #1c2738;
       --muted: #5a6a7d;
       --line: #d7e0ea;
@@ -58,9 +62,12 @@
 
     /* Top quote bar */
     .quote-bar {
-      background: linear-gradient(90deg, var(--navy-deep), var(--navy-soft));
+      background: var(--blue-glass-strong);
       color: #fff;
       padding: 10px 0;
+      border-bottom: 1px solid rgba(212,160,23,.28);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
     .quote-bar-inner {
       display: flex;
@@ -87,9 +94,10 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255,255,255,.96);
-      border-bottom: 1px solid rgba(10,49,92,.08);
-      backdrop-filter: blur(10px);
+      background: var(--blue-glass);
+      border-bottom: 1px solid rgba(212,160,23,.35);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       overflow: visible;
     }
     .nav {
@@ -133,7 +141,7 @@
     .nav-links a {
       position: relative;
       z-index: 1;
-      color: var(--navy);
+      color: #f2f4f8;
       font-size: .88rem;
       font-weight: 500;
       letter-spacing: .04em;
@@ -146,8 +154,8 @@
     }
     .nav-links a:hover,
     .nav-links a.active {
-      background: rgba(242,189,61,.14);
-      color: var(--navy-deep);
+      background: rgba(240,192,64,.16);
+      color: var(--gold-light);
       box-shadow: inset 0 0 0 1.5px var(--gold);
     }
     .nav-book {
@@ -169,8 +177,8 @@
     .menu-toggle {
       display: none;
       background: transparent;
-      border: 1px solid rgba(10,49,92,.2);
-      color: var(--navy);
+      border: 1px solid rgba(240,192,64,.45);
+      color: var(--gold-light);
       border-radius: 8px;
       padding: 8px 12px;
       font-size: 1.15rem;
@@ -631,9 +639,12 @@
 
     /* Footer */
     footer {
-      background: #03162f;
+      background: var(--blue-glass-strong);
       color: #d7dbe5;
       padding: 56px 0 28px;
+      border-top: 1px solid rgba(212,160,23,.28);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
     .footer-grid {
       display: grid;
@@ -644,8 +655,8 @@
     .footer-brand p { color: #aeb6c6; margin: 12px 0 0; font-size: .92rem; }
     .footer-logo {
       width: auto;
-      height: 48px;
-      max-width: 240px;
+      height: 88px;
+      max-width: 260px;
       object-fit: contain;
       display: block;
     }
@@ -770,13 +781,15 @@
         top: 100%;
         left: 0; right: 0;
         margin-right: 0;
-        background: #fff;
+        background: rgba(7, 59, 120, 0.94);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
         flex-direction: column;
         align-items: stretch;
         padding: 14px 18px 20px;
         border-bottom: 2px solid var(--gold);
         gap: 4px;
-        box-shadow: 0 16px 30px rgba(3,22,47,.12);
+        box-shadow: 0 16px 30px rgba(0,0,0,.45);
         z-index: 101;
       }
       .nav-links.open { display: flex; }
@@ -810,7 +823,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="index.html" aria-label="Waratech home">
-        <img class="brand-logo-img" src="waratech-logo-header.png" alt="Waratech Air Conditioning-Refrigeration Service" width="207" height="96" decoding="async">
+        <img class="brand-logo-img" src="waratech-logo-navy-gold.png" alt="Waratech Air Conditioning Services" width="207" height="96" decoding="async">
       </a>
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">☰</button>
       <nav class="nav-links" id="navLinks" aria-label="Primary">
@@ -924,7 +937,6 @@
               <div class="num">01</div>
               <h3>Air Conditioning Services</h3>
               <p>Complete care to keep your system clean, reliable and performing well.</p>
-              <span class="learn-more">Learn More →</span>
             </div>
           </a>
           <a class="service-tile reveal" href="services.html#explore" style="background-image:url('images/service-repairs-technician.jpg')">
@@ -932,7 +944,6 @@
               <div class="num">02</div>
               <h3>Air Conditioning Repairs</h3>
               <p>Reliable repairs to help restore your system’s performance.</p>
-              <span class="learn-more">Learn More →</span>
             </div>
           </a>
           <a class="service-tile reveal" href="services.html#explore" style="background-image:url('images/service-maintenance-clean.png')">
@@ -940,7 +951,6 @@
               <div class="num">03</div>
               <h3>Air Conditioning Maintenance</h3>
               <p>Regular maintenance for efficient operation and year-round comfort.</p>
-              <span class="learn-more">Learn More →</span>
             </div>
           </a>
           <a class="service-tile reveal" href="services.html#explore" style="background-image:url('images/service-installation-bedroom.png')">
@@ -948,7 +958,6 @@
               <div class="num">04</div>
               <h3>Air Conditioning Installation</h3>
               <p>Professional installation tailored to your home or business.</p>
-              <span class="learn-more">Learn More →</span>
             </div>
           </a>
         </div>
@@ -969,7 +978,7 @@
           </ul>
         </div>
         <div class="about-photo reveal">
-          <img src="images/home-comfort-living.jpg" alt="Modern living space with professional air conditioning" width="720" height="900" loading="lazy" decoding="async">
+          <img src="images/about-waratech-living.jpg" alt="Modern living room with Waratech air conditioning" width="720" height="900" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -1004,6 +1013,7 @@
       </div>
     </section>
 
+    <!--
     <section class="section why" id="why">
       <div class="container">
         <div class="section-heading">
@@ -1045,6 +1055,7 @@
         </div>
       </div>
     </section>
+    -->
 
     <section class="section spaces" id="spaces">
       <div class="container">
@@ -1126,7 +1137,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img class="footer-logo" src="waratech-logo-on-dark.png" alt="Waratech logo" width="220" height="48" decoding="async">
+          <img class="footer-logo" src="waratech-logo-navy-gold.png" alt="Waratech Air Conditioning Services" width="220" height="88" decoding="async">
           <p>Professional air conditioning and refrigeration solutions across Greater Sydney.</p>
         </div>
         <div>
