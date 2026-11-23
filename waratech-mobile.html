@@ -32,8 +32,8 @@
       --navy-soft: #07305f;
       --black: #073B78;
       --ink: #062f61;
-      --blue-glass: rgba(7, 59, 120, 0.72);
-      --blue-glass-strong: rgba(7, 59, 120, 0.88);
+      --blue-glass: rgba(7, 59, 120, 0.42);
+      --blue-glass-strong: rgba(7, 59, 120, 0.58);
       --gold: #d4a017;
       --gold-light: #f0c040;
       --text: #1c2738;
@@ -47,7 +47,7 @@
       --font: "Poppins", sans-serif;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 140px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 170px; }
     body {
       margin: 0;
       font-family: var(--font);
@@ -60,14 +60,26 @@
     button, input, select, textarea { font: inherit; }
     .container { width: min(100% - 40px, 1180px); margin: 0 auto; }
 
+    /* Fixed glass chrome over hero from first paint */
+    .site-chrome {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      isolation: isolate;
+    }
+
     /* Top quote bar */
     .quote-bar {
-      background: var(--blue-glass-strong);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.1), rgba(255,255,255,0)),
+        var(--blue-glass-strong);
       color: #fff;
       padding: 10px 0;
-      border-bottom: 1px solid rgba(212,160,23,.28);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(18px) saturate(160%);
+      -webkit-backdrop-filter: blur(18px) saturate(160%);
     }
     .quote-bar-inner {
       display: flex;
@@ -91,13 +103,15 @@
 
     /* Header */
     header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--blue-glass);
+      position: relative;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.02)),
+        var(--blue-glass);
       border-bottom: 1px solid rgba(212,160,23,.35);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 10px 30px rgba(3,22,47,.18);
+      backdrop-filter: blur(22px) saturate(165%);
+      -webkit-backdrop-filter: blur(22px) saturate(165%);
       overflow: visible;
     }
     .nav {
@@ -227,7 +241,7 @@
       min-height: min(86vh, 740px);
       display: flex;
       align-items: center;
-      padding: 70px 0 120px;
+      padding: 190px 0 120px;
     }
     .hero-slides, .hero-slide, .hero-overlay { position: absolute; inset: 0; }
     .hero-slide {
@@ -794,7 +808,7 @@
       }
       .nav-links.open { display: flex; }
       .nav-links a { display: block; width: 100%; padding: 14px 12px; }
-      .hero { min-height: auto; padding: 48px 0 90px; }
+      .hero { min-height: auto; padding: 170px 0 90px; }
       .hero-actions { display: grid; }
       .hero-actions .button { width: 100%; }
       .section { padding: 56px 0; }
@@ -813,29 +827,31 @@
   </style>
 </head>
 <body>
-  <div class="quote-bar">
-    <div class="container quote-bar-inner">
-      <h3>Delivering professional air quality solutions across Sydney</h3>
-      <a href="tel:+61433868646">Call +61 433 868 646</a>
+  <div class="site-chrome">
+    <div class="quote-bar">
+      <div class="container quote-bar-inner">
+        <h3>Delivering professional air quality solutions across Sydney</h3>
+        <a href="tel:+61433868646">Call +61 433 868 646</a>
+      </div>
     </div>
-  </div>
 
-  <header>
-    <div class="container nav">
-      <a class="brand" href="index.html" aria-label="Waratech home">
-        <img class="brand-logo-img" src="waratech-logo-navy-gold.png" alt="Waratech Air Conditioning Services" width="207" height="96" decoding="async">
-      </a>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">☰</button>
-      <nav class="nav-links" id="navLinks" aria-label="Primary">
-        <a href="#home" class="active" data-nav>Home</a>
-        <a href="#about" data-nav>About Us</a>
-        <a href="services.html" data-nav>Services</a>
-        <a href="#faqs" data-nav>FAQ's</a>
-        <a href="#contact" data-nav>Contact</a>
-      </nav>
-      <a class="nav-book" href="#contact">Get a free quote</a>
-    </div>
-  </header>
+    <header>
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="Waratech home">
+          <img class="brand-logo-img" src="waratech-logo-navy-gold.png" alt="Waratech Air Conditioning Services" width="207" height="96" decoding="async">
+        </a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">☰</button>
+        <nav class="nav-links" id="navLinks" aria-label="Primary">
+          <a href="#home" class="active" data-nav>Home</a>
+          <a href="#about" data-nav>About Us</a>
+          <a href="services.html" data-nav>Services</a>
+          <a href="#faqs" data-nav>FAQ's</a>
+          <a href="#contact" data-nav>Contact</a>
+        </nav>
+        <a class="nav-book" href="#contact">Get a free quote</a>
+      </div>
+    </header>
+  </div>
 
   <main>
     <section class="hero" id="home">
