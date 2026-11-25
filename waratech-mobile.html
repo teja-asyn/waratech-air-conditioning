@@ -477,6 +477,43 @@
     }
     .service-tile:hover .learn-more { color: #fff; }
 
+    /* Brands marquee */
+    .brands { background: var(--mist); overflow: hidden; }
+    .brand-marquee {
+      position: relative;
+      margin-top: 8px;
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    .brand-track {
+      display: flex;
+      width: max-content;
+      gap: 18px;
+      animation: brandScroll 32s linear infinite;
+    }
+    .brand-marquee:hover .brand-track { animation-play-state: paused; }
+    .brand-logo {
+      flex: 0 0 auto;
+      width: 168px;
+      height: 78px;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      border: 1px solid rgba(10,49,92,.08);
+      border-radius: 14px;
+      padding: 12px 16px;
+    }
+    .brand-logo img {
+      width: 100%;
+      height: 44px;
+      object-fit: contain;
+      opacity: 1;
+    }
+    @keyframes brandScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
     /* About */
     .about { background: var(--soft); }
     .about-grid {
@@ -897,6 +934,7 @@
       footer { padding-bottom: 100px; }
       .quote-bar-inner { justify-content: center; text-align: center; }
       .about-photo { aspect-ratio: 16 / 11; }
+      .brand-logo { width: 136px; height: 64px; }
       .field input, .field select, .field textarea { font-size: 16px; min-height: 46px; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -904,6 +942,8 @@
       *, *::before, *::after { animation: none !important; transition: none !important; }
       .reveal { opacity: 1; transform: none; }
       .hero-slide { transform: none; }
+      .brand-track { transform: none; flex-wrap: wrap; width: 100%; justify-content: center; animation: none; }
+      .brand-marquee { mask-image: none; -webkit-mask-image: none; }
     }
   </style>
 </head>
@@ -1058,6 +1098,40 @@
               <p>Professional installation tailored to your home or business.</p>
             </div>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section brands" id="brands">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">All major brands serviced</div>
+          <h2>We service leading air conditioning brands</h2>
+          <p>Our technicians service popular brands used across Sydney homes and businesses.</p>
+        </div>
+      </div>
+      <div class="brand-marquee" aria-label="Air conditioning brands we service">
+        <div class="brand-track">
+          <div class="brand-logo"><img src="brands/daikin.svg" alt="Daikin" width="140" height="44" loading="lazy" decoding="async"></div>
+          <div class="brand-logo"><img src="brands/mitsubishi.svg" alt="Mitsubishi Electric" width="140" height="44" loading="lazy" decoding="async"></div>
+          <div class="brand-logo"><img src="brands/fujitsu.svg" alt="Fujitsu" width="140" height="44" loading="lazy" decoding="async"></div>
+          <div class="brand-logo"><img src="brands/panasonic.svg" alt="Panasonic" width="140" height="44" loading="lazy" decoding="async"></div>
+          <div class="brand-logo"><img src="brands/lg.svg" alt="LG" width="140" height="44" loading="lazy" decoding="async"></div>
+          <div class="brand-logo"><img src="brands/samsung.svg" alt="Samsung" width="140" height="44" loading="lazy" decoding="async"></div>
+          <div class="brand-logo"><img src="brands/toshiba.svg" alt="Toshiba" width="140" height="44" loading="lazy" decoding="async"></div>
+          <div class="brand-logo"><img src="brands/carrier.svg" alt="Carrier" width="140" height="44" loading="lazy" decoding="async"></div>
+          <div class="brand-logo"><img src="brands/hitachi.svg" alt="Hitachi" width="140" height="44" loading="lazy" decoding="async"></div>
+          <div class="brand-logo"><img src="brands/gree.svg" alt="Gree" width="140" height="44" loading="lazy" decoding="async"></div>
+          <div class="brand-logo" aria-hidden="true"><img src="brands/daikin.svg" alt="" width="140" height="44" loading="lazy" decoding="async"></div>
+          <div class="brand-logo" aria-hidden="true"><img src="brands/mitsubishi.svg" alt="" width="140" height="44" loading="lazy" decoding="async"></div>
+          <div class="brand-logo" aria-hidden="true"><img src="brands/fujitsu.svg" alt="" width="140" height="44" loading="lazy" decoding="async"></div>
+          <div class="brand-logo" aria-hidden="true"><img src="brands/panasonic.svg" alt="" width="140" height="44" loading="lazy" decoding="async"></div>
+          <div class="brand-logo" aria-hidden="true"><img src="brands/lg.svg" alt="" width="140" height="44" loading="lazy" decoding="async"></div>
+          <div class="brand-logo" aria-hidden="true"><img src="brands/samsung.svg" alt="" width="140" height="44" loading="lazy" decoding="async"></div>
+          <div class="brand-logo" aria-hidden="true"><img src="brands/toshiba.svg" alt="" width="140" height="44" loading="lazy" decoding="async"></div>
+          <div class="brand-logo" aria-hidden="true"><img src="brands/carrier.svg" alt="" width="140" height="44" loading="lazy" decoding="async"></div>
+          <div class="brand-logo" aria-hidden="true"><img src="brands/hitachi.svg" alt="" width="140" height="44" loading="lazy" decoding="async"></div>
+          <div class="brand-logo" aria-hidden="true"><img src="brands/gree.svg" alt="" width="140" height="44" loading="lazy" decoding="async"></div>
         </div>
       </div>
     </section>
