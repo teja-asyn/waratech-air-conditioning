@@ -484,6 +484,7 @@
       grid-template-columns: 1.05fr .95fr;
       gap: 28px;
       align-items: center;
+      margin-bottom: 34px;
     }
     .about-copy h2 {
       margin: 8px 0 14px;
@@ -491,20 +492,39 @@
       font-size: clamp(1.8rem, 3.4vw, 2.4rem);
       line-height: 1.2;
     }
-    .about-copy > p { color: var(--muted); margin: 0 0 18px; }
-    .about-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; }
-    .about-list li {
-      background: #fff;
-      border-radius: 14px;
-      padding: 16px 18px;
-      border: 1px solid rgba(217,154,19,.12);
-      box-shadow: 0 8px 20px rgba(3,22,47,.05);
+    .about-copy > p { color: var(--muted); margin: 0 0 16px; }
+    .about-photo {
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      aspect-ratio: 4 / 5;
+      background: #dfe6f0;
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .about-checklist {
+      margin: 0 0 40px;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 18px;
+    }
+    .about-checklist li {
       display: grid;
       grid-template-columns: 28px 1fr;
       gap: 10px;
       align-items: start;
+      background: #fff;
+      border-radius: 14px;
+      padding: 14px 16px;
+      border: 1px solid rgba(217,154,19,.12);
+      box-shadow: 0 8px 20px rgba(3,22,47,.05);
+      color: var(--navy);
+      font-weight: 600;
+      font-size: .95rem;
+      line-height: 1.35;
     }
-    .about-list li::before {
+    .about-checklist li::before {
       content: "✓";
       width: 28px; height: 28px;
       border-radius: 50%;
@@ -514,14 +534,58 @@
       font-weight: 800;
       font-size: .85rem;
     }
-    .about-photo {
+    .about-why {
+      background: #fff;
       border-radius: 22px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      aspect-ratio: 4 / 5;
-      background: #dfe6f0;
+      padding: 28px;
+      border: 1px solid rgba(10,49,92,.06);
+      box-shadow: 0 12px 28px rgba(3,22,47,.06);
     }
-    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .about-why h3 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+    }
+    .about-why > p {
+      margin: 0 0 24px;
+      color: var(--muted);
+      max-width: 62rem;
+    }
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .about-highlight {
+      background: var(--mist);
+      border-radius: 16px;
+      padding: 18px 14px;
+      text-align: center;
+      border: 1px solid rgba(10,49,92,.06);
+    }
+    .about-highlight .icon {
+      width: 46px; height: 46px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      display: grid; place-items: center;
+      background: rgba(217,154,19,.14);
+      color: var(--gold);
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+    .about-highlight strong {
+      display: block;
+      color: var(--navy);
+      font-size: .92rem;
+      line-height: 1.3;
+    }
+    @media (max-width: 980px) {
+      .about-checklist { grid-template-columns: 1fr; }
+      .about-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px) {
+      .about-highlights { grid-template-columns: 1fr; }
+    }
 
     /* Reviews */
     .reviews { background: #fff; }
@@ -631,6 +695,15 @@
       color: rgba(255,255,255,.88);
       font-size: .95rem;
     }
+    .faq-item .answer p { margin: 0 0 10px; }
+    .faq-item .answer p:last-child { margin-bottom: 0; }
+    .faq-item .answer ul {
+      margin: 0 0 12px;
+      padding-left: 1.15rem;
+      display: grid;
+      gap: 6px;
+    }
+    .faq-item .answer li { margin: 0; }
 
     /* CTA banner */
     .cta-banner {
@@ -863,7 +936,7 @@
       <div class="hero-overlay"></div>
       <div class="container hero-content">
         <h1>Healthier air. Reliable comfort.</h1>
-        <p>Waratech cleans, services and installs air conditioning systems so Sydney homes and workplaces breathe better, feel cooler and run more efficiently.</p>
+        <p>Waratech provides expert air conditioning cleaning, servicing, and installation across Sydney, helping homes and businesses enjoy cleaner air, greater comfort, and improved energy efficiency.</p>
         <ul class="hero-proof">
           <li>Sydney based local team</li>
           <li>Residential &amp; commercial</li>
@@ -901,13 +974,14 @@
     <section class="section booking" id="contact">
       <div class="container booking-grid">
         <div class="booking-copy reveal">
-          <h2>Request a free quote</h2>
-          <p>Tell us what you need and we’ll follow up to discuss the right service for your Sydney space.</p>
+          <h2>Request Your Free Quote</h2>
+          <p>Tell us about your air conditioning needs, and our team will recommend the best solution for your Sydney home or business.</p>
           <ul>
-            <li>Experienced technicians</li>
-            <li>Clear recommendations and quotes</li>
-            <li>Residential and commercial solutions</li>
-            <li>Service, repair, maintenance &amp; installation</li>
+            <li>Qualified &amp; Experienced Air Conditioning Specialists</li>
+            <li>Honest Advice with Transparent, No-Obligation Quotes</li>
+            <li>Tailored Solutions for Homes, Offices &amp; Commercial Spaces</li>
+            <li>Complete Services Including Cleaning, Repairs, Maintenance &amp; New Installations</li>
+            <li>Reliable Workmanship Focused on Comfort, Air Quality &amp; Energy Efficiency</li>
           </ul>
         </div>
         <div class="booking-form reveal">
@@ -981,20 +1055,56 @@
     </section>
 
     <section class="section about" id="about">
-      <div class="container about-grid">
-        <div class="about-copy reveal">
-          <div class="eyebrow" style="color:var(--gold);text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:700;">About Us</div>
-          <h2>Professional air quality solutions for Sydney.</h2>
-          <p>Waratech is a Sydney air conditioning and refrigeration service focused on healthier indoor air, reliable comfort and dependable system care.</p>
-          <ul class="about-list">
-            <li>Experienced technicians who inspect first and explain what they find.</li>
-            <li>Quality workmanship for residential and commercial systems.</li>
-            <li>Clear recommendations — service, repair, maintain or install.</li>
-            <li>Local coverage across Greater Sydney suburbs.</li>
-          </ul>
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <div class="eyebrow" style="color:var(--gold);text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:700;">About Us</div>
+            <h2>Reliable, professional and affordable air conditioning across Sydney.</h2>
+            <p>At Waratech Air Conditioning Services, we are dedicated to providing reliable, professional and affordable air conditioning solutions across Sydney. Our goal is to deliver exceptional service and quality workmanship while ensuring every customer receives great value for their money.</p>
+            <p>We take pride in every job, focusing on attention to detail, professional standards and dependable results. Whether it's a new installation, repair or regular maintenance, we approach every project with care and a commitment to quality.</p>
+            <p>We believe that high-quality air conditioning services shouldn't come at an excessive cost. That's why we strive to offer competitive and transparent pricing without compromising on workmanship or customer satisfaction.</p>
+          </div>
+          <div class="about-photo reveal">
+            <img src="images/about-waratech-living.jpg" alt="Modern living room with Waratech air conditioning" width="720" height="900" loading="lazy" decoding="async">
+          </div>
         </div>
-        <div class="about-photo reveal">
-          <img src="images/about-waratech-living.jpg" alt="Modern living room with Waratech air conditioning" width="720" height="900" loading="lazy" decoding="async">
+
+        <ul class="about-checklist reveal">
+          <li>Expert Air Conditioning Solutions</li>
+          <li>Exceptional Service &amp; Workmanship</li>
+          <li>Honest Advice &amp; Transparent Quotes</li>
+          <li>Competitive Pricing with Lasting Value</li>
+          <li>Reliable Support for Homes &amp; Businesses</li>
+          <li>Quality Results, Delivered Every Time</li>
+          <li>Sydney's Trusted Air Conditioning Professionals</li>
+          <li>Focused on Comfort, Air Quality &amp; Efficiency</li>
+        </ul>
+
+        <div class="about-why reveal">
+          <h3>Why Choose Us?</h3>
+          <p>At Waratech Air Conditioning Services, we combine experienced technicians, quality workmanship and competitive pricing to deliver reliable air conditioning solutions. Our skilled team services all major air conditioning brands, including Daikin, Mitsubishi, Panasonic and Fujitsu. We take pride in providing professional service, attention to detail and affordable solutions without compromising on quality. Your comfort and satisfaction are always our priority.</p>
+          <div class="about-highlights">
+            <article class="about-highlight">
+              <div class="icon" aria-hidden="true">01</div>
+              <strong>Experienced Technicians</strong>
+            </article>
+            <article class="about-highlight">
+              <div class="icon" aria-hidden="true">02</div>
+              <strong>All Major Brands Serviced</strong>
+            </article>
+            <article class="about-highlight">
+              <div class="icon" aria-hidden="true">03</div>
+              <strong>Quality Workmanship</strong>
+            </article>
+            <article class="about-highlight">
+              <div class="icon" aria-hidden="true">04</div>
+              <strong>Competitive &amp; Affordable Pricing</strong>
+            </article>
+            <article class="about-highlight">
+              <div class="icon" aria-hidden="true">05</div>
+              <strong>Reliable Customer Service</strong>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1003,8 +1113,8 @@
       <div class="container">
         <div class="section-heading">
           <div class="eyebrow">Customer reviews</div>
-          <h2>The kind of experience we aim to deliver</h2>
-          <p>Replace these with your real Google reviews before launch.</p>
+          <h2>Why Sydney Customers Choose Waratech</h2>
+          <p>Read genuine reviews from homeowners and businesses who trust us for professional air conditioning cleaning, servicing, repairs, and installations.</p>
         </div>
         <div class="review-grid">
           <article class="review-card reveal">
@@ -1078,7 +1188,7 @@
         <div class="section-heading">
           <div class="eyebrow">Who we help</div>
           <h2>Residential &amp; commercial solutions</h2>
-          <p>Practical air conditioning care designed for the spaces Sydney people live and work in.</p>
+          <p>Whether it's your home, office, retail store, or commercial facility, we provide expert services designed for lasting comfort and performance.</p>
         </div>
         <div class="space-grid">
           <article class="space-card reveal">
@@ -1109,29 +1219,97 @@
       <div class="container">
         <div class="section-heading">
           <div class="eyebrow">FAQ</div>
-          <h2>Quick answers about Waratech services</h2>
-          <p>Quick answers about Waratech services and booking across Sydney.</p>
+          <h2>Need More Information?</h2>
+          <p>Browse our frequently asked questions for quick answers about bookings, services, maintenance, repairs, and installations across Sydney.</p>
         </div>
         <div class="faq-list">
           <details class="faq-item reveal" open>
-            <summary>What services does Waratech provide?</summary>
-            <div class="answer">We provide air conditioning services, repairs, maintenance and installation for residential and commercial customers across Greater Sydney.</div>
+            <summary>How often should I service my air conditioner?</summary>
+            <div class="answer">We recommend servicing your air conditioning system at least once a year to keep it running efficiently and reliably. Regular maintenance helps prevent unexpected breakdowns, improves energy efficiency, and extends the lifespan of your system.</div>
           </details>
           <details class="faq-item reveal">
-            <summary>Do you service all major brands?</summary>
-            <div class="answer">Yes. We service a wide range of popular air conditioning brands used in Sydney homes and businesses.</div>
+            <summary>Why is regular air conditioning maintenance important?</summary>
+            <div class="answer">Regular maintenance ensures your air conditioner operates at its best. It helps improve cooling performance, maintain indoor air quality, reduce energy consumption, and identify potential problems before they become costly repairs.</div>
           </details>
           <details class="faq-item reveal">
-            <summary>How do I book a service?</summary>
-            <div class="answer">Use the booking form on this page, call +61 433 868 646, or email waratechair@gmail.com and we’ll confirm your appointment.</div>
+            <summary>What does an air conditioning service include?</summary>
+            <div class="answer">
+              <p>A standard air conditioning service may include:</p>
+              <ul>
+                <li>Cleaning or checking air filters.</li>
+                <li>Inspecting indoor and outdoor units.</li>
+                <li>Cleaning coils and checking drainage.</li>
+                <li>Checking refrigerant system performance.</li>
+                <li>Inspecting electrical connections.</li>
+                <li>Testing cooling and heating performance.</li>
+                <li>Checking overall system operation.</li>
+              </ul>
+            </div>
           </details>
           <details class="faq-item reveal">
-            <summary>Do you cover my suburb?</summary>
-            <div class="answer">We service Greater Sydney including CBD, Inner West, Eastern Suburbs, North Shore, Northern Beaches, Western Sydney and surrounding areas. Share your suburb when you enquire.</div>
+            <summary>How do I know if my air conditioner needs servicing?</summary>
+            <div class="answer">
+              <p>Some common warning signs include:</p>
+              <ul>
+                <li>Weak airflow or poor cooling.</li>
+                <li>Unusual noises or unpleasant smells.</li>
+                <li>Water leaking from the indoor unit.</li>
+                <li>Higher-than-normal electricity bills.</li>
+                <li>Air conditioner taking longer to cool the room.</li>
+                <li>System frequently switching on and off.</li>
+              </ul>
+              <p>If you notice any of these issues, it's best to arrange a professional inspection.</p>
+            </div>
           </details>
           <details class="faq-item reveal">
-            <summary>Is GST included in quotes?</summary>
-            <div class="answer">Quotes can be provided with GST clarity on request. Ask us when you book and we’ll confirm pricing details before work begins.</div>
+            <summary>Why is my air conditioner not cooling properly?</summary>
+            <div class="answer">There are several possible reasons, including dirty air filters, blocked coils, low refrigerant levels due to a leak, drainage issues, or mechanical faults. A professional technician can inspect your system and identify the cause.</div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>How often should I clean my air conditioning filters?</summary>
+            <div class="answer">For most residential systems, we recommend checking filters every month and cleaning them every 1–3 months, depending on usage, pets, dust, and environmental conditions. Clean filters help maintain good airflow and cooling efficiency.</div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>How long does an air conditioning service take?</summary>
+            <div class="answer">A standard maintenance service typically takes around 45–90 minutes, depending on the type, condition, and accessibility of the air conditioning system. More complex systems may require additional time.</div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Can regular maintenance reduce my electricity bills?</summary>
+            <div class="answer">Yes. A properly maintained air conditioner can operate more efficiently, helping reduce unnecessary energy consumption. Clean filters, clear airflow, and well-maintained components allow your system to work more effectively.</div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Do you service all types of air conditioning systems?</summary>
+            <div class="answer">
+              <p>Professional air conditioning technicians can service a range of systems, including:</p>
+              <ul>
+                <li>Split system air conditioners.</li>
+                <li>Multi-split systems.</li>
+                <li>Ducted air conditioning systems.</li>
+                <li>Commercial air conditioning systems.</li>
+                <li>Reverse-cycle air conditioners.</li>
+              </ul>
+              <p>Please contact us to confirm service availability for your particular system.</p>
+            </div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>What should I do if my air conditioner is leaking water?</summary>
+            <div class="answer">Turn off the air conditioner and arrange an inspection. Water leakage may be caused by a blocked drain line, a damaged drain tray, or other system issues. Prompt attention can help prevent water damage.</div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Is air conditioning maintenance necessary even if my unit is working properly?</summary>
+            <div class="answer">Absolutely! Even if your air conditioner appears to be working normally, internal components can accumulate dust and dirt over time. Preventative maintenance helps identify hidden issues and keeps your system operating reliably.</div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>When is the best time to book air conditioning maintenance?</summary>
+            <div class="answer">The best time is before the peak summer or winter season, when your system is likely to be used more frequently. Booking ahead helps ensure your air conditioner is ready when you need it most.</div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Do you provide air conditioning repairs as well as maintenance?</summary>
+            <div class="answer">Yes, air conditioning repairs may be available for systems experiencing cooling issues, unusual noises, water leaks, electrical faults, or other operational problems. Our technicians can assess the issue and recommend the appropriate solution.</div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>How can I book an air conditioning service?</summary>
+            <div class="answer">Booking is easy! Simply contact our team by phone or through our online enquiry form. We'll help arrange a convenient appointment to keep your air conditioning system running smoothly.</div>
           </details>
         </div>
       </div>
@@ -1139,8 +1317,8 @@
 
     <section class="cta-banner">
       <div class="container">
-        <h2>Ready for healthier air and reliable comfort?</h2>
-        <p>Ready for healthier air and reliable comfort? with Waratech and enjoy cleaner, more reliable comfort at home or work.</p>
+        <h2>Transform Your Indoor Comfort with Waratech.</h2>
+        <p>Enjoy cleaner air, greater efficiency, and dependable climate control with Sydney's trusted air conditioning specialists.</p>
         <div class="cta-actions">
           <a class="button" href="#contact">Get a free quote</a>
           <a class="button button-outline" href="tel:+61433868646">Call +61 433 868 646</a>
