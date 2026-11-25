@@ -42,7 +42,7 @@
       --font: "Poppins", sans-serif;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 170px; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--site-chrome-height, 168px) + 12px); }
     body {
       margin: 0;
       font-family: var(--font);
@@ -130,11 +130,11 @@
 
     .hero {
       position: relative; overflow: hidden; color: #fff;
-      min-height: min(68vh, 560px); display: flex; align-items: center;
+      min-height: min(68vh, 560px); display: flex; align-items: flex-start;
       background:
         linear-gradient(105deg, rgba(3,22,47,.96) 0%, rgba(3,22,47,.86) 45%, rgba(3,22,47,.4) 100%),
         url('images/outdoor-condenser-service.jpg') center 35%/cover;
-      padding: 190px 0 70px;
+      padding: calc(var(--site-chrome-height, 168px) + 28px) 0 70px;
     }
     .hero-content { max-width: 760px; }
     .hero h1 {
@@ -362,7 +362,15 @@
       }
       .nav-links.open { display: flex; }
       .nav-links a { display: block; width: 100%; padding: 14px 12px; }
-      .hero { min-height: auto; padding: 170px 0 56px; }
+      .quote-bar { padding: 8px 0; }
+      .quote-bar h3 { font-size: .78rem; line-height: 1.35; }
+      .hero {
+        min-height: auto;
+        align-items: flex-start;
+        padding: calc(var(--site-chrome-height, 180px) + 24px) 0 70px;
+      }
+      .hero h1 { font-size: clamp(1.9rem, 8.2vw, 2.5rem); }
+      .hero-content { width: 100%; }
       .hero-actions { display: grid; }
       .section { padding: 56px 0; }
       .mobile-cta { display: flex; }
@@ -728,6 +736,22 @@
 
     const navLinks = document.getElementById('navLinks');
     const menuToggle = document.getElementById('menuToggle');
+    const siteChrome = document.querySelector('.site-chrome');
+
+    function syncSiteChromeHeight() {
+      if (!siteChrome) return;
+      const height = Math.ceil(siteChrome.getBoundingClientRect().height);
+      document.documentElement.style.setProperty('--site-chrome-height', height + 'px');
+    }
+    syncSiteChromeHeight();
+    window.addEventListener('resize', syncSiteChromeHeight);
+    window.addEventListener('load', syncSiteChromeHeight);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(syncSiteChromeHeight).catch(function () {});
+    }
+    document.querySelectorAll('.brand-logo-img').forEach(function (img) {
+      if (!img.complete) img.addEventListener('load', syncSiteChromeHeight);
+    });
 
     function toggleMenu() {
       const isOpen = navLinks.classList.toggle('open');
